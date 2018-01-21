@@ -1,0 +1,231 @@
+/* * {
+    font-family: PingFangSC-Ultralight, sans-serif;
+} */
+
+.en { font-family: Arial }
+.bil { font-family: "Microsoft Yahei" }
+
+
+.panel-default>.panel-heading {
+    background-color: #fff;
+}
+
+.card {
+    padding: 0 10px 10px 10px;
+}
+
+.card .panel {
+    border: none;    
+    margin: 0;
+}
+
+.card .panel-heading{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    border: none;
+    color: #989ba7;
+}
+
+.card .panel-heading>div{
+    border-bottom: 1px solid #ddd;
+}
+
+
+.card .panel-heading .save{
+    height: 40px;
+    line-height: 40px;
+    float: right;
+    cursor: pointer;    
+}
+
+.card .panel-body .col {
+    padding: 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.card .panel-body .col .tag, .card table tbody td .tag {
+    border: 1px #ccc solid;
+    border-radius: 50px;
+    font-size: 14px;
+    padding: 3px 5px;
+    text-align: center;
+    width: 90%;
+    display: inline-block;
+}
+
+.card .panel-body .col .tag:hover, .card table tbody td .tag:hover{
+    background-color: #5574ff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.card table tbody td .tag {
+    width: auto;
+    padding: 3px 15px;
+}
+
+.card .media-list .media .media-heading {
+    color: #748bff;
+}
+
+.card .media-list .media .media-left div {
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+}
+
+.card .media-list .media .media-body .introduction {
+    margin: 25px 0 5px;
+}
+
+.card .media-list .media .media-body .introduction.user-info {
+    color: #888991;
+}
+
+.card .media-list .media .media-body .introduction li {
+    background-repeat: no-repeat;
+    background-size: inherit;
+    background-position: left top;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.card table .media-list .media .media-left img,
+.card table .media-list .media .media-left .media-object {
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card table .media-list .media .media-left {
+    padding-right: 20px;
+}
+
+.card table .media-list .media .media-body .introduction {
+    margin: 10px 0 5px;
+}
+
+.card table .media-list .media .media-body .introduction li {
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+.card .myTab {
+    background-color: #fff;
+    /* border: 1px solid #ddd; */
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.card .myTab .tab-pane, {
+    padding: 10px 15px;
+}
+
+.card .rgzn {
+    padding: 0 10px;
+    height: 40px;
+}
+
+.card .rgzn>span {
+    border-bottom: 3px solid #5574ff;
+    padding: 10px;
+    display: inline-block;
+}
+
+.card .rgzn .form {
+    float: right;
+    height: 100%;
+    line-height: 40px;
+}
+
+.card .rgzn .form .form-group {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.card .myTab .myTable {
+    padding: 10px 10px 0;
+}
+
+.card .myTab .myTable table {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.card .myTab .myTable table tr th {
+    border: 1px solid #ddd;
+    text-align: center;
+    background-color: #f1f2fa;
+    vertical-align: middle;
+}
+
+.card .myTab .tab-content table tr td.pingfang * {
+    font-family: PingFangSC-Ultralight, sans-serif;
+}
+
+.card .myTab .tab-content table tr td span.color-hover:hover {
+    color:#5574ff
+}
+
+.card .myTab .nav-tabs>li>a {
+    color: #888991;
+}
+
+
+.card .myTab .nav-tabs>li.active>a {
+    color: #5574ff;
+}
+
+.sentBtn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background: #5d83ff;
+    background: -moz-linear-gradient(top left,  #5d83ff 0%, #4a5fff 100%);
+    background: -webkit-linear-gradient(top left,  #5d83ff 0%,#4a5fff 100%);
+    background: -o-linear-gradient(top left,  #5d83ff 0%,#4a5fff 100%);
+    background: -ms-linear-gradient(top left,  #5d83ff 0%,#4a5fff 100%);
+    background: linear-gradient(top left,  #5d83ff 0%,#4a5fff 100%);
+}
+
+.bgc{
+    background: #ccc !important;
+}
+
+.forget_password{
+    color: #999;
+    cursor: pointer;
+}
+
+.forget_password:hover {
+    color: #5574ff;
+}

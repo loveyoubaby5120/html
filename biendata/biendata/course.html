@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)https://biendata.com/ -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="icon" type="image/png" href="https://biendata.com/static/img/favicon.png">
+
+    <title>biendata</title>
+
+    <script type="application/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <script type="application/javascript" src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <link href="./css/controls.css" rel="stylesheet" type="text/css" media="screen,projection">
+
+    <script type="application/javascript" src="./js/login.js"></script>
+    <script type="application/javascript" src="./js/form.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/select2.css">
+    <script type="application/javascript" src="./js/select2.js"></script>
+    <script type="application/javascript" src="./js/select2.full.js"></script>
+
+    <script src="./js/jquery-ui.min.js" type="application/javascript">
+    </script>
+    <link href="./css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/common.css" rel="stylesheet" type="text/css">
+    <style>
+
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#myCarousel').carousel({
+                    interval: 5000
+                })
+                //鼠标移入样式
+            $(".block_wrap .col-sm-4").mouseover(function() {
+                $(this).find(".block_wrap_shade").show();
+            });
+            //鼠标移开样式
+            $(".block_wrap .col-sm-4").mouseout(function() {
+                $(this).find(".block_wrap_shade").hide();
+            });
+        });
+    </script>
+</head>
+
+<body class='index competition course min-wrapper' style="background-color: rgb(238, 238, 238);">
+    <div class=".container" style="min-height: 1266px;">
+        <div class="row">
+            <nav class="navbar navbar-default navbar-inverse" style="border-radius:0px">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            <a class="navbar-brand" href="https://biendata.com/"><img src="./img/site-logo.png"></a>
+                            <ul class="nav navbar-nav">
+                                <!--<li class="f18"><a class="navbar-brand" href="#"><strong>Competition</strong></a></li>-->
+
+                            </ul>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <!--
+                                                                <li><a>
+                                                                    <form action="/i18n/setlang/" method="post">
+                                                                        <input type='hidden' name='csrfmiddlewaretoken' value='uBfB9DQpgn6fhQBqYcfKgzuw0MTaA1RR' />
+                                                                            <input name="next" type="hidden" value=""/>
+                                                                            <select name="language" class="form-control" id="select-voyageedit" style="width:95px;height:30px;font-size:12px" onchange="this.form.submit()">
+                                                                                <option value="en" >English</option>
+                                                                                <option value="zh-hans"  selected="selected">简体中文</option>
+                                                                            </select>
+                                                                    </form>
+                                                                </a></li>
+                                    -->
+                                <li>
+                                    <form name="form_en" action="https://biendata.com/i18n/setlang/" method="post">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="uBfB9DQpgn6fhQBqYcfKgzuw0MTaA1RR">
+                                        <input name="language" type="hidden" value="en">
+                                    </form>
+                                </li>
+                                <li>
+                                    <p style="color:#fff;padding:15px 15px 5px 15px;">当前活跃参赛者数:3</p>
+                                </li>
+                                <li>
+                                    <a href="javascript:this.document.form_en.submit();">
+                                        <p>English version</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='javascript:;' id="id-login-btn">
+                                        <p>登录</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://biendata.com/user/register/">
+                                        <p style="color:#01E9FB;border: 1px solid #01E9FB;border-radius: 2px;padding:0 8px 0 8px !important;line-height:24px !important">注册</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="wrapper">
+            <div id="id-nav-login" style="display: none">
+                <form id="id-top-login-form" action="https://biendata.com/user/login/" method="post">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="uBfB9DQpgn6fhQBqYcfKgzuw0MTaA1RR">
+                    <div id="div_id_username" class="form-group">
+                        <div class="controls "> <input class="textinput textInput form-control" id="id_username" maxlength="50" name="username" placeholder="Username" type="text"> </div>
+                    </div>
+                    <div id="div_id_password" class="form-group">
+                        <div class="controls "> <input class="textinput textInput form-control" id="id_password" maxlength="20" name="password" placeholder="Password" type="password"> </div>
+                    </div>
+                    <div class="form-group">
+                        <div id="div_id_remember" class="checkbox"> <label for="id_remember" class=""> <input checked="checked" class="checkboxinput" id="id_remember" name="remember" type="checkbox">
+                                    Remember Me
+                                </label> </div>
+                    </div> <input id="id_next" maxlength="200" name="next" type="hidden">
+                    <div class="form-group">
+                        <div class="controls "> <input type="submit" name="submit" value="登陆" class="btn btn-primary" id="submit-id-submit"> </div>
+                    </div>
+                </form>
+                <p><a href="https://biendata.com/user/forget-password/">忘记密码?</a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="background-color: #000;">
+                <div id="myCarousel" class="wrapper carousel slide">
+                    <!-- 轮播（Carousel）项目 -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="./img/banner-3.png" alt="First slide" style="width: 100%">
+                            <div class="carousel-caption">
+                                <h2 style="border: none;">
+                                    <img src="./img/course.png" style="width: 40px;margin-right: 20px;" alt="">Course
+                                </h2>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <div class="item">
+                                            <div style="background-image: url(./img/bmcs.png);"></div>
+                                            <p>注册课程</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="item">
+                                            <div style="background-image: url(./img/zjtd.png);"></div>
+                                            <p>进行学习</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="item">
+                                            <div style="background-image: url(./img/zzdf.png);"></div>
+                                            <p>学习反馈</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <hr class="col-xs-12" />
+                                    <div class="col-xs-3">
+                                        <div class="itemNum">
+                                            1
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="itemNum">
+                                            2
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="itemNum">
+                                            3
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 当前位置 -->
+            <div class="wrapper" style="padding: 15px 10px;font-size: 15px;">
+                <img src="./img/home-1.png" alt="" style="width: 12px;margin: -3px 3px 0 0;">
+                <span>主页</span>
+                <span>&nbsp;&nbsp;>&nbsp;</span>
+                <span>比赛</span>
+                <span>&nbsp;&nbsp;>&nbsp;</span>
+            </div>
+
+            <div class="wrapper" style="margin-bottom: 40px;">
+                <div class="search">
+                    <div class='title'>
+                        <img class="icon" src="./img/kc.png" style="">
+                        <span>3个正在进行的课程</span>
+                        <select>
+                            <option>分类按照</option>
+                        </select>
+                    </div>
+                    <ul class="option">
+                        <li><a class="active" href="javascript:;">正在进行</a></li>
+                        <li><a href="javascript:;">即将进行</a></li>
+                        <li><a href="javascript:;">已经结束</a></li>
+                        <li><a href="javascript:;">教授课程</a></li>
+                        <li><a href="javascript:;">助教课程</a></li>
+                    </ul>
+                    <ul class="list">
+                        <li class="active">
+                            <div class="start"></div>
+                            <div class="content">
+                                <div class="img" style="background-image: url(./img/item2.jpg);"></div>
+                                <div class="thumbnail_wrap1">
+                                    <h4>
+                                        <a href="item.html" style="color:#000;">
+                                            <span class="des_text p0" title="机器学习">机器学习</span>
+                                        </a>
+                                    </h4>
+                                    <p style="color: #9B9B9B;padding-top: 3px;" title="ntroduction to 机器学习" class="des_twoline">ntroduction to 机器学习</p>
+                                    <div class="row">
+                                        <dl class="col-xs-6 p0">
+                                            <dd style="color: #000;">
+                                                <img class="icon2" src="./img/skls.png">
+                                                <span>授课老师:张老师</span>
+                                            </dd>
+                                            <dd style="color: #000;">
+                                                <img class="icon2" src="./img/zbf.png">
+                                                <span>所属学院:CMU</span>
+                                            </dd>
+                                        </dl>
+                                        <dl class="col-xs-6 p0">
+                                            <dd style="color: #000;">
+                                                <img class="icon2" src="./img/skrq.png">
+                                                <span>上课日期: 2016年9月1日 ——9月2日</span>
+                                            </dd>
+                                            <dd style="color: #000;">
+                                                <img class="icon2" src="./img/sjz.png">
+                                                <span>上课时间:  07:58</span>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ol class="breadcrumb text-center" style="z-index: 0; position: absolute; bottom: 0px; width: 100%;margin-top:0;background:#192337;height:60px;padding-top:20px;">
+        <li><a class="text-capitalize" href="https://biendata.com/about/">关于</a></li>
+        <li><a class="text-capitalize" href="https://biendata.com/terms/">条款</a></li>
+        <li><a class="text-capitalize" href="https://biendata.com/privacy/">隐私</a></li>
+        <li><a class="text-capitalize" href="https://biendata.com/contact/">联系</a></li>
+    </ol>
+
+    <script>
+        var time;
+
+
+        function res() {
+            if ($(document.body).height() < $(window).height()) {
+                $("body>div").css("min-height", $(window).height() - $(".breadcrumb").height() + "px");
+                $(".breadcrumb").css({
+                    "position": "absolute",
+                    "bottom": "0",
+                    "width": "100%"
+                });
+            } else {
+                $(".breadcrumb").css({
+                    "position": "relative",
+                    "bottom": "auto",
+                    "width": "auto"
+                });
+            }
+        };
+
+        res();
+
+        $(window).resize(function() {
+            res();
+        });
+    </script>
+
+
+
+</body>
+
+</html>

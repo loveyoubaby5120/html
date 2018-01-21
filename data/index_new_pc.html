@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <meta charset="UTF-8">
+    <title>飞拓无限</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/index_new_pc.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/echarts.js"></script>
+</head>
+<body ng-controller="MyController">
+
+    <div class="mask">
+        <div class="instructions">
+            <i class="close" onclick="(function(){$('.mask').hide(0,function(){$('body').css({'overflow':'auto','position':'relative'});});})()">×</i>
+            <p class="title">说明</p>
+            <ul>
+                <li>通过数据抓取技术和合作方提供的数据，我们获得了数百万个公众号的发布频率、文章内容、实时阅读数和实时点赞数。我们采用了这些数据，结合最前沿的数据分析学术研究，对微信公众号在社交网络中的影响力进行了深入、细致和全面的探索，最后进行了分类和排序。在计算影响力的时候，我们主要进行了以下几种分析：</li>
+                <li class="label">1，指标预测</li>
+                <li>我们利用合作公众号的数据作为训练集，开发出了预测实时转发数和实时粉丝数的模型。并用真实数据对模型的参数进行了校正。我们使用这些指标定量了粉丝活跃度。</li>
+                <li class="label">2，账号分类</li>
+                <li>根据我们构建的语义库，我们选取单字串和二字串作为特征单元，TF-IDF作为权重计算方法，LibSVM作为分类模型，并最终将所有账号分成十二类，分别为：1、新闻资讯，2、时尚生活，3、娱乐影音，4、旅游美食，5、科技IT，6、汽车，7、房产家居，8、运动健身，9、财经理财，10、休闲娱乐，11、游戏动漫，12、健康生活。</li>
+                <li class="label">3、点击和点赞的时间分布</li>
+                <li>我们参考并修改了Yasuko Matsubara等人于2012年提出的SPIKEM模型，统计和分析了阅读数和点赞数随时间的分布涨落情况。SPIKEM模型既考虑了阅读数和点赞数在大时间尺度上的幂指数增衰，也考虑了两者随着时间周期自然波动的特征。</li>
+                <li>结果显示，即使阅读和点赞总数相同，不同的时间分布也会对影响力产生影响，还会改变未来的传播趋势。因此，我们在榜单的影响力和未来趋势指标中考虑了阅读和点赞的时间分布特征。</li>
+                <li class="label">4，公众号文章的文本分析</li>
+                <li>我们利用文本分析和情感分析研究了近50个文本特征，包括文章长度，动词密度，标题用词，以及诱导转发的措辞和标记。此外，我们还将公众号文章的词汇和我们的词袋模型进行了比对（约5000个特征）。之前有研究表明，在Twitter上，即使不考虑关注者数量和发帖时间，措辞本身也会对转发数有显著影响。</li>
+                <li>我们发现，公众号文章在传播上也有类似的特点。因此，我们通过选取并修正合适的特征组合，为公众号文本的文字措辞进行打分，并将之用于影响力和增长趋势的评估中。</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="logo">
+        <div class="search">
+            <div>
+                <span class="left">微信公众号</span><span class="right">排行榜</span>
+            </div>
+            <div class="right_div">
+                <input type="text" placeholder="请输入微信公众号id,名称">
+                <i></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header_info">
+            <ul>
+                <li>
+                    <div>
+                        <p class="top">统计截止</p>
+                        <p class="bottom transform_scale">3月22日 12时整</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="top">样本数量</p>
+                        <p class="bottom transform_scale">55555555</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="top">热文数量</p>
+                        <p class="bottom transform_scale">55555555</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="top">阅读数量</p>
+                        <p class="bottom transform_scale">55555555</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="introducing"  ng-click="show();">
+                数据说明
+            </div>
+        </div>
+    </div>
+
+    <div class="date">
+        <div class="date_info">
+            <div class="select_data1">
+
+                <a class='ok' href="javascript:;">最近30天</a><span class='down'>ˇ</span>
+                <ul class="select">
+                    <li class="option">最近30天</li>
+                    <li class="option">最近60天</li>
+                </ul>
+                <!-- 
+                <select>
+                    <option>最近30天</option>
+                    <option>最近60天</option>
+                </select> -->
+            </div>
+            <div>
+                <span class="date_num">2</span>
+                <span class="date_num">0</span>
+                <span class="date_num">1</span>
+                <span class="date_num">6</span>
+                <span>年</span>
+                <span class="date_num">0</span>
+                <span class="date_num">4</span>
+                <span>月</span>
+                <span class="date_num">1</span>
+                <span class="date_num">5</span>
+                <span>日</span>
+                <span></span>
+                <span class="down">ˇ</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="info">
+            <ul class="left">
+                <li class="title">行业</li>
+                <li class="item"><a href="javascript:;">新闻资讯</a></li>
+                <li class="item active"><a href="javascript:;">新闻资讯</a></li>
+                <li class="item"><a href="javascript:;">新闻资讯</a></li>
+                <li class="item"><a href="javascript:;">新闻资讯</a></li>
+                <li class="item"><a href="javascript:;">新闻资讯</a></li>
+                <li class="item"><a href="javascript:;">新闻资讯</a></li>
+                <li class="item"><a href="javascript:;">新闻资讯</a></li>
+                <li class="item"><a href="javascript:;">新闻资讯</a></li>
+                <li class="item"><a href="javascript:;">新闻资讯</a></li>
+            </ul>
+
+            <div class="right">
+                <ul class="option">
+                    <li class="bd active"><a href="javascript:;">榜单</a></li>
+                    <li class="qs"><a href="javascript:;">趋势</a></li>
+                </ul>
+
+                <div class='qs_more' style='display:none;'>
+                    <div class="title">
+                        新闻资讯
+                    </div>
+                    <div class="qs_info">
+                        <ul class="qs_left">
+                            <li class="title bzrc">本周热词</li>
+                            <li class="jtb"></li>
+                            <li class="item top"><a href="javascript:;">题舆论走势</a></li>
+                            <li class="item active"><a href="javascript:;">互联网+</a></li>
+                            <li class="item"><a href="javascript:;">题舆论走势</a></li>
+                            <li class="item"><a href="javascript:;">题舆论走势</a></li>
+                            <li class="title dzbq">定制标签</li>
+                            <li class="jtb"></li>
+                            <li class="item top"><a href="javascript:;">题舆论走势</a></li>
+                            <li class="item"><a href="javascript:;">题舆论走势</a></li>
+                            <li class="item"><a href="javascript:;">题舆论走势</a></li>
+                            <li class="item"><a href="javascript:;">题舆论走势</a></li>
+                        </ul>
+                        <div class="qs_right">
+                            <div class="chart">
+                                <ul>
+                                    <li class="item first"><a href="javascript:;">话题传播数量趋势</a></li>
+                                    <li class="item active"><a href="javascript:;">题舆论走势</a></li>
+                                    <li class="item"><a href="javascript:;">话题脉搏</a></li>
+                                </ul>
+
+                                <div id="main" style="width: 530px;height:400px;"></div>
+                            </div>
+
+                            <div class="step1">
+                                帐户影响力排名
+                            </div>
+                            
+                            <ul class="step1_info">
+                                <li class="item" onclick="window.location.href = 'index_new_pc_info.html';">
+                                    <div class="step1_left">
+                                        <img src="images/hqkj.png" alt=""/>
+                                        <div>
+                                            <p>环球科学ScientificAmerican</p>
+                                            <p>微信号：huanqiukexue</p>
+                                            <p class="btn">
+                                                <span class="btn_left">用户态度</span><span class="btn_right">正面</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="step1_right">
+                                        <ul>
+                                            <li>
+                                                <p class="step1_title">预测粉丝数</p>
+                                                <p class="num">6,666,666</p>
+                                            </li>
+                                            <li class="center">
+                                                <p class="step1_title">相关阅读</p>
+                                                <p class="num">6,666,666</p>
+                                            </li>
+                                            <li>
+                                                <p class="step1_title">相关点赞</p>
+                                                <p class="num">6,666,666</p>
+                                            </li>
+                                        </ul>
+                                        <div>
+                                            <span>话题影响指数</span>
+                                            <i></i><i></i><i></i><i></i><i></i>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="item" onclick="window.location.href = 'index_new_pc_info.html';">
+                                    <div class="step1_left">
+                                        <img src="images/hqkj.png" alt=""/>
+                                        <div>
+                                            <p>环球科学ScientificAmerican</p>
+                                            <p>微信号：huanqiukexue</p>
+                                            <p class="btn">
+                                                <span class="btn_left">用户态度</span><span class="btn_right">正面</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="step1_right">
+                                        <ul>
+                                            <li>
+                                                <p class="step1_title">预测粉丝数</p>
+                                                <p class="num">6,666,666</p>
+                                            </li>
+                                            <li class="center">
+                                                <p class="step1_title">相关阅读</p>
+                                                <p class="num">6,666,666</p>
+                                            </li>
+                                            <li>
+                                                <p class="step1_title">相关点赞</p>
+                                                <p class="num">6,666,666</p>
+                                            </li>
+                                        </ul>
+                                        <div>
+                                            <span>话题影响指数</span>
+                                            <i></i><i></i><i></i><i></i><i></i>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="item" onclick="window.location.href = 'index_new_pc_info.html';">
+                                    <div class="step1_left">
+                                        <img src="images/hqkj.png" alt=""/>
+                                        <div>
+                                            <p>环球科学ScientificAmerican</p>
+                                            <p>微信号：huanqiukexue</p>
+                                            <p class="btn">
+                                                <span class="btn_left">用户态度</span><span class="btn_right">正面</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="step1_right">
+                                        <ul>
+                                            <li>
+                                                <p class="step1_title">预测粉丝数</p>
+                                                <p class="num">6,666,666</p>
+                                            </li>
+                                            <li class="center">
+                                                <p class="step1_title">相关阅读</p>
+                                                <p class="num">6,666,666</p>
+                                            </li>
+                                            <li>
+                                                <p class="step1_title">相关点赞</p>
+                                                <p class="num">6,666,666</p>
+                                            </li>
+                                        </ul>
+                                        <div>
+                                            <span>话题影响指数</span>
+                                            <i></i><i></i><i></i><i></i><i></i>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="step2">
+                                文章影响力排名
+                            </div>
+
+                            <ul class="step2_info">
+                                <li class="item">
+                                    <div class="topic">
+                                        男女胎儿比例为何不是1：1？
+                                    </div>
+                                    <div class="writer">
+                                        <span>原创</span>
+                                        <span>撰文 凯特·朗</span>
+                                    </div>
+                                    <div class="introduce">
+                                        <p>
+                                            科学家发现，在怀孕的不同阶段，男女胎儿的比例会发生变化。产房里，新生儿是男孩的几率比女孩稍微大一点。在美国，51.3％的活产婴儿是男性，这一比例在过去70年内基本保持不变。专家认为，这种偏向男性的性别比例在受孕时就开始了。
+                                        </p>
+                                    </div>
+                                    <div class="other">
+                                        <div class="other_left">2016-03-23  17:09</div>
+                                        <div class="other_right2">73</div>
+                                        <div class="other_right1">阅读  10357</div>
+                                    </div>
+                                </li>
+
+                                <li class="item">
+                                    <div class="topic">
+                                        男女胎儿比例为何不是1：1？
+                                    </div>
+                                    <div class="writer">
+                                        <span>原创</span>
+                                        <span>撰文 凯特·朗</span>
+                                    </div>
+                                    <div class="introduce">
+                                        <p>
+                                            科学家发现，在怀孕的不同阶段，男女胎儿的比例会发生变化。产房里，新生儿是男孩的几率比女孩稍微大一点。在美国，51.3％的活产婴儿是男性，这一比例在过去70年内基本保持不变。专家认为，这种偏向男性的性别比例在受孕时就开始了。
+                                        </p>
+                                    </div>
+                                    <div class="other">
+                                        <div class="other_left">2016-03-23  17:09</div>
+                                        <div class="other_right2">73</div>
+                                        <div class="other_right1">阅读  10357</div>
+                                    </div>
+                                </li>
+
+                                <li class="item">
+                                    <div class="topic">
+                                        男女胎儿比例为何不是1：1？
+                                    </div>
+                                    <div class="writer">
+                                        <span>原创</span>
+                                        <span>撰文 凯特·朗</span>
+                                    </div>
+                                    <div class="introduce">
+                                        <p>
+                                            科学家发现，在怀孕的不同阶段，男女胎儿的比例会发生变化。产房里，新生儿是男孩的几率比女孩稍微大一点。在美国，51.3％的活产婴儿是男性，这一比例在过去70年内基本保持不变。专家认为，这种偏向男性的性别比例在受孕时就开始了。
+                                        </p>
+                                    </div>
+                                    <div class="other">
+                                        <div class="other_left">2016-03-23  17:09</div>
+                                        <div class="other_right2">73</div>
+                                        <div class="other_right1">阅读  10357</div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                            
+                            <div class="showMore"><div class="last jtb"></div><span>显示更多信息</span></div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class='table blur' style='display:auto;'>
+                <div class="bc title"><p class="type ng-binding">排名</p></div>
+                    <table class="bc">
+                        <thead>
+                        <tr>
+                            <th class="w_2"></th>
+                            <th class="w_10"></th>
+                            <th class="w_15"><div><p class="">微信名称</p></div></th>
+                            <th class="w_15"><div><p class="">微信账号</p></div></th>
+                            <th class="w_15"><div><p class="">粉丝黏性</p></div></th>
+                            <th class="w_15"><div><p class="">增长潜力</p></div></th>
+                            <th class="w_20"><div><p class="">粉丝活跃度</p></div></th>
+                            <th class="w_15"><div><p class="">综合热度</p></div></th>
+                            <th class="w_15"><div><p class="">查看详细</p></div></th>
+                            <th class="w_2"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat='nr in item' ng-show="$index < 15 || toggle == true" ng-class="{'even':$index%2 == 0}">
+                            <td></td>
+                            <td ng-click="show();">
+                                <div class="number" ng-class="{'number2':$index<3}">{{$index+1 | number : 0}}</div>
+                            </td>
+                            <td class="text "><div>{{nr.name}}</div></td>
+                            <td class="text "><div>{{nr.number}}</div></td>
+                            <td class="text "><div>{{nr.zh}}</div></td>
+                            <td class="text "><div>{{nr.xd}}</div></td>
+                            <td class="text "><div>{{nr.zc}}</div></td>
+                            <td class="last "><div>{{nr.jd}}</div></td>
+                            <td class="text goto_info"><a href="javascript:;" onclick="window.location.href = 'index_new_pc_info.html';">进入&nbsp;></a></td>
+                            <td></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="showMore" ng-click="showTable($event,0);"><div class="last jtb"></div><span>{{MoreTitle}}</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="go_top" id="go_top" onclick="myScroll()"></div>
+    </div>
+
+    <div class="footer">
+        <p>版权所有 Copyright 2015,ALL Rights Reserved | 京 ICP 备 14052239 号 -2 |</p>
+    </div>
+    <script src="js/app_pc.js"></script>
+
+
+    <script>
+
+        function run(){
+             // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main'));
+
+            var option = {
+                title: {
+                    text: ''
+                },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : ['周一','周二','周三','周四','周五','周六','周日']
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                series : [
+                    {
+                        name:'邮件营销',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:[120, 132, 101, 134, 90, 230, 210]
+                    },
+                    {
+                        name:'联盟广告',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:[220, 182, 191, 234, 290, 330, 310]
+                    },
+                    {
+                        name:'视频广告',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:[150, 232, 201, 154, 190, 330, 410]
+                    },
+                    {
+                        name:'直接访问',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:[320, 332, 301, 334, 390, 330, 320]
+                    },
+                    {
+                        name:'搜索引擎',
+                        type:'line',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'top'
+                            }
+                        },
+                        areaStyle: {normal: {}},
+                        data:[820, 932, 901, 934, 1290, 1330, 1320]
+                    }
+                ]
+            };
+
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        }
+
+        run();
+
+        function myScroll() 
+        { 
+            //前边是获取chrome等一般浏览器 如果获取不到就是ie了 就用ie的办法获取 
+            var x=document.body.scrollTop||document.documentElement.scrollTop; 
+            var timer=setInterval(function(){ 
+                x=x-200; 
+                if(x<100) 
+                { 
+                    x=0; 
+                    window.scrollTo(x,x);
+                    var oDiv = document.getElementById('go_top'); 
+                    oDiv.style.display = 'none';
+                    clearInterval(timer); 
+                } 
+                window.scrollTo(x,x); 
+            },30); 
+        } 
+
+        var scrollFunc=function(e){
+            var x = document.body.scrollTop||document.documentElement.scrollTop; 
+            if(x<=0){
+                var oDiv = document.getElementById('go_top'); 
+                oDiv.style.display = 'none';
+            }
+            else{
+                var oDiv = document.getElementById('go_top'); 
+                oDiv.style.display = 'block';
+            }
+        }  
+        /*注册事件*/  
+        if(document.addEventListener){  
+            document.addEventListener('DOMMouseScroll',scrollFunc,false);  
+        }//W3C  
+        window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome/Safari  
+        
+
+        scrollFunc();
+
+
+        $('.date .select_data1').mouseover(function(){
+            var _this = $(this);
+            $(this).find('.select').show();
+            $(this).find('.select').on('click','.option',function(){
+                _this.find('.ok').text($(this).text());
+                _this.find('.select').hide();
+            });
+        }).mouseout(function(){
+            $(this).find('.select').hide();
+        });
+
+
+        $('.content .info .right .option').on('click','li a',function(){
+            $('.table').toggle();$('.qs_more').toggle();
+            $(this).parent().parent().find('li').removeClass('active');$(this).parent().addClass('active');
+        });
+
+    </script>
+
+</body>
+</html>

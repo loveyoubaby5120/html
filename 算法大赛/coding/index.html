@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--<link rel="icon" type="image/png" href="https://biendata.com/static/img/favicon.png">-->
+  <title>中国人工智能大赛</title>
+
+  <meta content="user-scalable=0, initial-scale=1.0" name="viewport">
+
+  <script type="application/javascript" src="./js/jquery-1.11.3.min.js"></script>
+  <link href="./fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <script type="application/javascript" src="./js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link href="./css/controls.css" rel="stylesheet" type="text/css" media="screen,projection">
+  <script src="./js/jquery-ui.min.js" type="application/javascript"></script>
+  <link href="./css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+  <link href="./css/common.css" rel="stylesheet" type="text/css">
+  <script src="./js/echarts.common.min.js" type="application/javascript"></script>
+
+</head>
+
+<body class='container-fluid wrapper' style='background-color: #fff;margin: 0;padding: 0 10%;background-image: url("./img/bg.png")'>
+  <div class='row content'>
+    <div class='head'>
+      <div class='left'>
+        <div class='logo'>
+          <div class='img'></div>
+          <div class='title'>2017 搜狐图文匹配算法大赛总决赛</div>
+        </div>
+        <span>实时分数</span>
+      </div>
+      <div class='time'>
+        倒计时：
+        <span id='minute'>00</span> 分
+        <span id='second'>00</span> 秒
+      </div>
+    </div>
+
+    <div class='bottom'>
+      <div class='echart'>
+        <div id="main"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+    var interval = 1000;
+    function ShowCountDown(time, divname) {
+      var minuteDom = document.getElementById('minute');
+      var secondDom = document.getElementById('second');
+
+      var now = new Date();
+      var endTime = new Date(time);
+      var leftTime = endTime.getTime() - now.getTime();
+      var leftsecond = parseInt(leftTime / 1000);
+      if (leftsecond <= 0) {
+        clearInterval(countInterval);
+        minuteDom.innerHTML = '00';
+        secondDom.innerHTML = '00';
+        return;
+      }
+      var day = Math.floor(leftsecond / (60 * 60 * 24));
+      day = 0;
+      var hour = Math.floor((leftsecond - day * 24 * 60 * 60) / 3600);
+      hour = 0;
+      var minute = Math.floor((leftsecond - day * 24 * 60 * 60 - hour * 3600) / 60);
+      var second = Math.floor(leftsecond - day * 24 * 60 * 60 - hour * 3600 - minute * 60);
+      // var cc = document.getElementById('time');
+      // cc.innerHTML = day + " 天  " + hour + " : " + minute + " : " + second;
+
+      minuteDom.innerHTML = minute;
+      secondDom.innerHTML = second;
+    }
+
+    var countInterval = setInterval(function () { ShowCountDown('2017/06/12 12:00:00'); }, interval);
+
+
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+      grid: {
+        left: 50,
+        right: 50,
+      },
+      xAxis: {
+        axisLabel: {
+          interval: 0,
+          rotate: 0,
+          textStyle: {
+            color: function (value, index) {
+              let colorList = [
+                '#e53a32',
+                '#fc8b25',
+                '#fd7a42',
+                '#8fc539',
+                '#12894f',
+                '#22cea8',
+                '#2f94fc',
+                '#156ba4',
+                '#79398f',
+                '#df52a1',
+              ];
+              return colorList[index];
+            }
+          }
+        },
+        data: [
+          "好名字\n可以让\n你的朋友\n更好的记住你",
+          "Lucky Team",
+          "繁花与夏叶",
+          "达康书记",
+          "一起搞事啦",
+          "夜空中\n最亮的星",
+          "DMIRLAB",
+          "弱水三千",
+          "中国国家\n跳水队",
+          "春风\n也曾笑我",
+        ],
+      },
+      yAxis: {
+        type: 'value',
+        axisLine: { show: false },
+        axisLabel: { show: false },
+        axisTick: { show: false },
+        splitLine: { show: false },
+      },
+      series: [{
+        type: 'bar',
+        itemStyle: {
+          normal: {
+            color: (params) => {
+              let colorList = [
+                '#e53a32',
+                '#fc8b25',
+                '#fd7a42',
+                '#8fc539',
+                '#12894f',
+                '#22cea8',
+                '#2f94fc',
+                '#156ba4',
+                '#79398f',
+                '#df52a1',
+              ];
+              return colorList[params.dataIndex];
+            },
+          },
+        },
+        label: {
+          normal: {
+            show: true,
+            position: 'top',
+          },
+        },
+        stack: 'one',
+        barWidth: '50',
+        data: []
+      }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+
+    function setData(data) {
+      let seriesData = [];
+
+      myChart.setOption({
+        series: [{
+          data: data,
+        }],
+      });
+    }
+
+    $.ajax({
+      url: './data.json',
+      dataType: 'json',
+      success: function (data) {
+        var array = []
+        for (var obj in data) {
+          array.push(data[obj])
+        }
+
+        setData(array)
+      }
+    })
+
+    function getData() {
+
+      $.ajax({
+        url: './data.json',
+        dataType: 'json',
+        success: function (data) {
+          var array = []
+          for (var obj in data) {
+            array.push(data[obj])
+          }
+
+          setData(array)
+        }
+      })
+
+    }
+
+    setInterval(function () { getData(); }, 1000);
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+.thumbnail {
+    /* height: 320px; */
+    border-radius: 8px;
+    box-shadow: 0 1px 4px 0 #DCD9D9;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.thumbnail h4 {
+    padding-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+.thumbnail h4 a {
+    color: #4A4A4A;
+    font-size: 16px;
+}
+
+.thumbnail h4 a span {
+    color: #4A4A4A;
+}
+
+.thumbnail a>img {
+    margin-left: auto;
+    margin-right: auto;
+    height: 90px;
+    width: 90px;
+}
+
+.thumbnail .des_text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

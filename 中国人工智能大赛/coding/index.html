@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--<link rel="icon" type="image/png" href="https://biendata.com/static/img/favicon.png">-->
+    <title>中国人工智能大赛</title>
+
+    <meta content="user-scalable=0, initial-scale=1.0" name="viewport">
+
+    <script type="application/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <link href="./fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <script type="application/javascript" src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link href="./css/controls.css" rel="stylesheet" type="text/css" media="screen,projection">
+    <script src="./js/jquery-ui.min.js" type="application/javascript"></script>
+    <link href="./css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/common.css" rel="stylesheet" type="text/css">
+
+    <script>
+        $(document).ready(function () {
+            $('#myCarousel').carousel({
+                interval: 50000000
+            })
+            //鼠标移入样式
+            $(".block_wrap .col-sm-4").mouseover(function () {
+                $(this).find(".block_wrap_shade").show();
+            });
+            //鼠标移开样式
+            $(".block_wrap .col-sm-4").mouseout(function () {
+                $(this).find(".block_wrap_shade").hide();
+            });
+        });
+    </script>
+</head>
+
+<body class='index min-wrapper' style="background-color: #fff;">
+    <div class=".container" style="min-height: 1266px;">
+        <div class="row">
+            <nav class="navbar navbar-default navbar-inverse" style="border-radius:0px">
+                <div class="">
+                    <div class="container-fluid" style="max-width: 1200px;">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                                aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            <!-- <a class="navbar-brand" href="https://biendata.com/"><img src="./img/caai2.png" style="padding: 5px 5px 10px 0px; height: 100%"></a> -->
+                             <a class="navbar-brand" href="https://biendata.com/"><img src="./img/logo.png" style="padding: 10px 5px 0 5px;"></a> 
+                            <ul class="nav navbar-nav">
+                                <!--<li class="f18"><a class="navbar-brand" href="#"><strong>Competition</strong></a></li>-->
+
+                            </ul>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href='javascript:;' style='padding-top: 10px;'>
+                                        <p>排行榜</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="row">
+            <div style="background-color: #000;">
+                <div id="myCarousel" class="wrapper carousel slide">
+                    <!-- 轮播（Carousel）指标 -->
+                    <!--
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+          </ol>
+           -->
+                    <!-- 轮播（Carousel）项目 -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="./img/banner.jpg" alt="First slide" style="width: 100%">
+                            <!-- <div class="carousel-caption">
+                                <h2>2017</h2>
+                                <br/>
+                                <div>
+                                    <span>中国人工智能大赛</span>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="item">
+                            <img src="./img/banner.jpg" alt="Second slide" style="width: 100%">
+                            <!-- <div class="carousel-caption">
+                                <h2>2017</h2>
+                                <br/>
+                                <div>
+                                    <span>中国人工智能大赛</span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- 轮播（Carousel）导航 -->
+                    <!--
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next"></a>
+           -->
+                </div>
+            </div>
+            <div class="wrapper block_wrap row mt50" style="margin: 50px auto 0 !important">
+                <div class="col-sm-4 col-md-3 col-md-offset-0 mb30 mt10">
+                    <div class="thumbnail row">
+                        <div class="thumbnail_wrap">
+                            <a href="javascript:;">
+                                <img src="./img/zhihu.png" style="width:276px; height:170px;border-radius: 5px 5px 0 0;" />
+                            </a>
+                        </div>
+                        <div class="thumbnail_wrap1" style="height: 93px;">
+                            <h4>
+                                <a href="javascript:;" style="font-size: 20px;">
+                                    <span class="des_text p0" title="领域：自然语言处理">领域：知乎</span>
+                                </a>
+                            </h4>
+                            <dl style="margin-top: 10px;">
+                                <dd>
+                                    <span class='fa fa-clock-o'></span>
+                                    <span>截止时间：</span>
+                                    <span>2017年8月15日</span>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="thumbnail_wrap1" style="border-top: 1px solid rgba(204, 204, 204, 0.5);">
+                            <h4>
+                                <span class="des_text p0" style="font-size: 18px;color: #159ceb;" title="总奖金：￥80,000">奖金：￥80,000</span>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="block_wrap_shade" onclick="window.location.href='https://biendata.com/competition/zhihu'">
+                        <a href="https://biendata.com/competition/zhihu">进行中</a>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-3 col-md-offset-1 mb30 mt10">
+                    <div class="thumbnail row">
+                        <div class="thumbnail_wrap">
+                            <a href="javascript:;">
+                                <img src="./img/mobike.jpg" style="width:276px; height:170px;border-radius: 5px 5px 0 0;" />
+                            </a>
+                        </div>
+                        <div class="thumbnail_wrap1" style="height: 93px;">
+                            <h4>
+                                <a href="javascript:;" style="font-size: 20px;">
+                                    <span class="des_text p0" title="领域：城市计算">领域：摩拜</span>
+                                </a>
+                            </h4>
+                            <dl style="margin-top: 10px;">
+                                <dd>
+                                    <span class='fa fa-clock-o'></span>
+                                    <span>截止时间：</span>
+                                    <span>2017年9月25日</span>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="thumbnail_wrap1" style="border-top: 1px solid rgba(204, 204, 204, 0.5);">
+                            <h4>
+                                <span class="des_text p0" style="font-size: 18px;color: #159ceb;" title="总奖金：￥80,000">奖金：￥100,000</span>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="block_wrap_shade" onclick="window.location.href='https://biendata.com/competition/mobike/'">
+                        <a href="https://biendata.com/competition/mobike/">进行中</a>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-3 col-md-offset-1 mb30 mt10">
+                    <div class="thumbnail row">
+                        <div class="thumbnail_wrap">
+                            <a href="javascript:;">
+                                <img src="./img/microsoft.jpg" style="width:276px; height:170px;border-radius: 5px 5px 0 0;" />
+                            </a>
+                        </div>
+                        <div class="thumbnail_wrap1" style="height: 93px;">
+                            <h4>
+                                <a href="javascript:;" style="font-size: 20px;">
+                                    <span class="des_text p0" title="领域：社交网络分析">领域：微软学术/清华大学</span>
+                                </a>
+                            </h4>
+                            <dl style="margin-top: 10px;">
+                                <dd>
+                                    <span class='fa fa-clock-o'></span>
+                                    <span>截止时间：</span>
+                                    <span>2017年9月14日</span>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="thumbnail_wrap1" style="border-top: 1px solid rgba(204, 204, 204, 0.5);">
+                            <h4>
+                                <span class="des_text p0" style="font-size: 18px;color: #159ceb;" title="总奖金：￥80,000">奖金：￥200,000</span>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="block_wrap_shade" onclick="window.location.href='https://biendata.com/competition/scholar/'">
+                        <a href="https://biendata.com/competition/scholar/">进行中</a>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                $("body").css({
+                    "background-color": "#fff",
+                });
+
+                $(document).ready(function () {
+                    //限制字符个数
+                    $(".des_twoline").each(function () {
+                        var maxwidth = 150;
+                        if ($(this).text().length > maxwidth) {
+                            $(this).text($(this).text().substring(0, maxwidth));
+                            $(this).html($(this).html() + '…');
+                        }
+                    });
+                });
+            </script>
+
+            <div class="list-unstyled wrapper block_wrap row mt10 zbdw" style="margin-top: 30px !important;">
+                <hr class="row" style="border-top: 1px solid rgba(204, 204, 204, 0.5);margin: 0 15px" />
+            </div>
+
+            <ul class="list-unstyled wrapper block_wrap row mt10 zbdw" style="margin: 60px auto 0 !important;">
+                <li class="row">
+                    <div class="leftTitle col-xs-12 col-sm-3 col-md-2" style="margin-top: 25px;">
+                        主办单位
+                    </div>
+                    <div class="col-xs-12 col-sm-9 col-md-10">
+                        <ul class="list-unstyled">
+                            <li>
+                                <!-- <img src="./img/caai.png" style="height: 70px;" /> -->
+                                <img src="./img/caai.jpg" style="height: 70px;" />
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="leftTitle col-xs-12 col-sm-3 col-md-2" style="margin-top: 25px;">
+                        协办单位
+                    </div>
+                    <div class="col-xs-12 col-sm-9 col-md-10">
+                        <ul class="list-unstyled">
+                            <li>
+                                <!-- <img src="./img/ieee.png" style="height: 50px;" /> -->
+                                <img src="./img/ieee.jpg" style="height: 32px;" />
+                            </li>
+                            <li>
+                                <!-- <img src="./img/paperweekly.jpg" style="height: 70px;" /> -->
+                                <img src="./img/paperweekly.jpg" style="height: 60px;" />
+                            </li>
+                            <li>
+                                <!-- <img src="./img/wechat.png" style="height: 70px;" /> -->
+                                <img src="./img/wechat.jpg" style="height: 48px;" />
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="leftTitle col-xs-12 col-sm-3 col-md-2" style="margin-top: 30px;">
+                        图书支持
+                    </div>
+                    <div class="col-xs-12 col-sm-9 col-md-10">
+                        <ul class="list-unstyled">
+                            <li>
+                                <!-- <img src="./img/huazhang.jpg" style="height: 100px;" /> -->
+                                <img src="./img/huazhang.jpg" style="height: 74px;" />
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="leftTitle col-xs-12 col-sm-3 col-md-2" style="margin-top: 10px;">
+                        承办单位
+                    </div>
+                    <div class="col-xs-12 col-sm-9 col-md-10">
+                        <ul class="list-unstyled">
+                            <li>
+                                <!-- <img src="./img/biendata.png" style="height: 30px;" /> -->
+                                <img src="./img/biendata.jpg" style="height: 24px;" />
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="leftTitle col-xs-12 col-sm-3 col-md-2" style="margin-top: 5px;">
+                        媒体支持
+                    </div>
+                    <div class="col-xs-12 col-sm-9 col-md-10">
+                        <ul class="list-unstyled">
+                            <li>
+                                <!-- <img src="./img/hqkx.png" style="height: 30px;" /> -->
+                                <img src="./img/hqkx.jpg" style="height: 24px;" />
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div style="border-top:1px solid #fff;height:80px;background:#fff">
+
+    </div>
+    <div class="wrapper breadcrumb text-left" style="z-index: 0; position: absolute; bottom: 0px; width: 100%;margin-top:0;background:#fff;height:60px;padding-top:20px; color: #737373;padding-bottom: 50px;">
+        <div class="wrapper block_wrap row mt10">Copyright 2017~2018 中国人工智能学会</div>
+    </div>
+
+    <script>
+                var time;
+
+
+                function res() {
+                    if ($(document.body).height() < $(window).height()) {
+                        $("body>div").css("min-height", $(window).height() - $(".breadcrumb").height() + "px");
+                        $(".breadcrumb").css({
+                            "position": "absolute",
+                            "bottom": "0",
+                            "width": "100%"
+                        });
+                    } else {
+                        $(".breadcrumb").css({
+                            "position": "relative",
+                            "bottom": "auto",
+                            "width": "auto"
+                        });
+                    }
+                };
+
+                res();
+
+                $(window).resize(function () {
+                    res();
+                });
+    </script>
+
+
+
+</body>
+
+</html>

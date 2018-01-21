@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)https://biendata.com/ -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="icon" type="image/png" href="https://biendata.com/static/img/favicon.png">
+
+    <title>biendata</title>
+
+    <script type="application/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <script type="application/javascript" src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <link href="./css/controls.css" rel="stylesheet" type="text/css" media="screen,projection">
+
+    <script type="application/javascript" src="./js/login.js"></script>
+    <script type="application/javascript" src="./js/form.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/select2.css">
+    <script type="application/javascript" src="./js/select2.js"></script>
+    <script type="application/javascript" src="./js/select2.full.js"></script>
+
+    <script src="./js/jquery-ui.min.js" type="application/javascript">
+    </script>
+    <link href="./css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/common.css" rel="stylesheet" type="text/css">
+    <style>
+
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#myCarousel').carousel({
+                    interval: 5000
+                })
+                //鼠标移入样式
+            $(".block_wrap .col-sm-4").mouseover(function() {
+                $(this).find(".block_wrap_shade").show();
+            });
+            //鼠标移开样式
+            $(".block_wrap .col-sm-4").mouseout(function() {
+                $(this).find(".block_wrap_shade").hide();
+            });
+        });
+    </script>
+</head>
+
+<body class='bbs bbs-3 min-wrapper' style="background-color: rgb(238, 238, 238);">
+    <div class=".container" style="min-height: 1266px;">
+        <div class="row">
+            <nav class="navbar navbar-default navbar-inverse" style="border-radius:0px">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            <a class="navbar-brand" href="https://biendata.com/"><img src="./img/site-logo.png"></a>
+                            <ul class="nav navbar-nav">
+                                <!--<li class="f18"><a class="navbar-brand" href="#"><strong>Competition</strong></a></li>-->
+
+                            </ul>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <!--
+                                                                <li><a>
+                                                                    <form action="/i18n/setlang/" method="post">
+                                                                        <input type='hidden' name='csrfmiddlewaretoken' value='uBfB9DQpgn6fhQBqYcfKgzuw0MTaA1RR' />
+                                                                            <input name="next" type="hidden" value=""/>
+                                                                            <select name="language" class="form-control" id="select-voyageedit" style="width:95px;height:30px;font-size:12px" onchange="this.form.submit()">
+                                                                                <option value="en" >English</option>
+                                                                                <option value="zh-hans"  selected="selected">简体中文</option>
+                                                                            </select>
+                                                                    </form>
+                                                                </a></li>
+                                    -->
+                                <li>
+                                    <form name="form_en" action="https://biendata.com/i18n/setlang/" method="post">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="uBfB9DQpgn6fhQBqYcfKgzuw0MTaA1RR">
+                                        <input name="language" type="hidden" value="en">
+                                    </form>
+                                </li>
+                                <li>
+                                    <p style="color:#fff;padding:15px 15px 5px 15px;">当前活跃参赛者数:3</p>
+                                </li>
+                                <li>
+                                    <a href="javascript:this.document.form_en.submit();">
+                                        <p>English version</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='javascript:;' id="id-login-btn">
+                                        <p>登录</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://biendata.com/user/register/">
+                                        <p style="color:#01E9FB;border: 1px solid #01E9FB;border-radius: 2px;padding:0 8px 0 8px !important;line-height:24px !important">注册</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="wrapper">
+            <div id="id-nav-login" style="display: none">
+                <form id="id-top-login-form" action="https://biendata.com/user/login/" method="post">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="uBfB9DQpgn6fhQBqYcfKgzuw0MTaA1RR">
+                    <div id="div_id_username" class="form-group">
+                        <div class="controls "> <input class="textinput textInput form-control" id="id_username" maxlength="50" name="username" placeholder="Username" type="text"> </div>
+                    </div>
+                    <div id="div_id_password" class="form-group">
+                        <div class="controls "> <input class="textinput textInput form-control" id="id_password" maxlength="20" name="password" placeholder="Password" type="password"> </div>
+                    </div>
+                    <div class="form-group">
+                        <div id="div_id_remember" class="checkbox"> <label for="id_remember" class=""> <input checked="checked" class="checkboxinput" id="id_remember" name="remember" type="checkbox">
+                                    Remember Me
+                                </label> </div>
+                    </div> <input id="id_next" maxlength="200" name="next" type="hidden">
+                    <div class="form-group">
+                        <div class="controls "> <input type="submit" name="submit" value="登陆" class="btn btn-primary" id="submit-id-submit"> </div>
+                    </div>
+                </form>
+                <p><a href="https://biendata.com/user/forget-password/">忘记密码?</a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="background-color: #000;">
+                <div id="myCarousel" class="wrapper carousel slide">
+                    <!-- 轮播（Carousel）项目 -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="./img/banner-4.png" alt="First slide" style="width: 100%">
+                            <div class="carousel-caption">
+                                <h2 style="border: none;">
+                                    讨论区
+                                </h2>
+                                <p>挖掘关于biendata的一切</p>
+                                <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 当前位置 -->
+            <div class="wrapper" style="padding: 15px 10px;font-size: 15px;">
+                <img src="./img/home-1.png" alt="" style="width: 12px;margin: -3px 3px 0 0;">
+                <span>主页</span>
+                <span>&nbsp;&nbsp;>&nbsp;</span>
+                <span>论坛</span>
+                <span>&nbsp;&nbsp;>&nbsp;</span>
+                <span>2016 Byte Cup国际机器学习竞赛</span>
+                <span>&nbsp;&nbsp;>&nbsp;</span>
+            </div>
+
+            <div class="wrapper search">
+                <div class="introduction" style="padding: 0 30px 10px;">
+                    <div class="figure">
+                        <div class="img" style="background-image: url(./img/item2.jpg);"></div>
+                        <div class="content">
+                            <p style="font-size: 17px;line-height: 18px !important;color:#70AEF6;">实事求是</p>
+                            <p style="font-size: 12px;line-height: 20px !important;color: #7E7E7E;">1个月之前</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 10px;">
+                        关于近期有用户使用墨刀制作的原型进行诈骗的公告
+                    </div>
+
+                    <div class="tag">
+                        <ul class="option" style="padding: 10px 0;">
+                            <li><a href="javascript:;">Competition</a></li>
+                        </ul>
+                    </div>
+
+                    <ul class="float">
+                        <li>
+                            <img class="icon3" src="./img/sj.png">
+                            <span>两个月之前</span>
+                        </li>
+                        <li>
+                            <img class="icon3" style="width: 20px;" src="./img/yj.png">
+                            <span>1999</span>
+                        </li>
+                    </ul>
+
+
+                    <div style="margin-bottom: 10px;">
+                        <p>官方声明：</p>
+
+                        <p>
+                            墨刀是在线的原型工具平台，产出的成果为无数据交换的演示模型。墨刀设计的初衷在于给用户提供便利并节省用户原型设计的时间，并不能形成真实的 App 应用软件，更不会包含转账、账号绑定等支付功能。 近期有不法分子试图通过使用墨刀平台产出的原型冒充真实 App 进行诈骗。目前，市场上已有不少利用 APK 诈骗的案例发生。因此，墨刀官方提醒您谨防诈骗，同时，请从正规官方渠道下载或使用应用软件，不要进行跨平台支付等操作。 若您在使用墨刀的过程中发现任何人员向您兜售墨刀官方软件及墨刀平台产生的 App 应用软件等行为，请及时向墨刀举报，墨刀将会协助调查及处理。目前，墨刀已经对部分违规账号进行了封号处理，同时为减少类似违规事件的发生，墨刀将平台内组件列表中的「外部网页」组件功能进行了限制，只有创业版以上方案才可以正常使用该功能，望广大用户周知。
+                            同时，墨刀也郑告不法分子，墨刀致力于尊重和保护知识产权、保护用户隐私，并坚持对违法犯罪行为零容忍。如发现任何个人或机构从事违法犯罪行为，墨刀则将采取一切合法手段和途径以保障墨刀及用户的利益，并追究不法者的违法侵权责任。
+                        </p>
+                    </div>
+                </div>
+                <p class="comment">
+                    评论
+                </p>
+
+                <ul class="count">
+                    <li class="item">
+                        <div class="top">
+                            <div class="left">
+                                <div class='img' style="background-image: url(./img/item2.jpg);"></div>
+                                <div>#1</div>
+                            </div>
+                            <div class="content">
+                                <p style="font-size: 18px;line-height: 18px !important;color:#70AEF6;">实事求是</p>
+                                <p style="font-size: 12px;line-height: 20px !important;color: #7E7E7E;">1个月之前</p>
+                                <p>
+                                    我不是推理小说的狂热粉丝，当初看紫金陈的“高智商犯罪”系列（其实该系列有一个更加惊悚的名字）纯粹是为了打发时间，只是在网站搜来了看看，直到后来一发不可收拾，买了《无证之罪》、《坏小孩》电子版的小说。我不是推理小说的狂热粉丝，当初看紫金陈的“高智商犯罪”系列（其实该系列有一个更加惊悚的名字）纯粹是为了打发时间，只是在网站搜来了看看，直到后来一发不可收拾，买了《无证之罪》、《坏小孩》电子版的小说...
+                                </p>
+                            </div>
+                        </div>
+                        <a class="yy">
+                            <img src="./img/yy.png" class="icon">
+                            <span>引用</span>
+                        </a>
+                        <a class="return" style="right: 80px;">
+                            <img src="./img/edit.png" class="icon">
+                            <span>编辑</span>
+                        </a>
+                        <a class="return">
+                            <img src="./img/del.png" class="icon">
+                            <span>删除</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div style="padding: 30px 30px 0px;">
+                    <span>
+                        <img src="./img/ly.png" class="icon">
+                        <span>说句话……</span>
+                    </span>
+                </div>
+
+                <div style="padding: 20px 30px 10px;">
+                    <textarea style="width: 100%; height: 200px;border: 1px solid #70AEF6;border-radius: 5px;"></textarea>
+                    <button type="button" class="btn btn-info" style="margin-top:10px;">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ol class="breadcrumb text-center" style="z-index: 0; position: absolute; bottom: 0px; width: 100%;margin-top:0;background:#192337;height:60px;padding-top:20px;">
+        <li><a class="text-capitalize" href="https://biendata.com/about/">关于</a></li>
+        <li><a class="text-capitalize" href="https://biendata.com/terms/">条款</a></li>
+        <li><a class="text-capitalize" href="https://biendata.com/privacy/">隐私</a></li>
+        <li><a class="text-capitalize" href="https://biendata.com/contact/">联系</a></li>
+    </ol>
+
+    <script>
+        var time;
+
+
+        function res() {
+            if ($(document.body).height() < $(window).height()) {
+                $("body>div").css("min-height", $(window).height() - $(".breadcrumb").height() + "px");
+                $(".breadcrumb").css({
+                    "position": "absolute",
+                    "bottom": "0",
+                    "width": "100%"
+                });
+            } else {
+                $(".breadcrumb").css({
+                    "position": "relative",
+                    "bottom": "auto",
+                    "width": "auto"
+                });
+            }
+        };
+
+        res();
+
+        $(window).resize(function() {
+            res();
+        });
+    </script>
+
+
+
+</body>
+
+</html>

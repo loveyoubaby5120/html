@@ -1,0 +1,573 @@
+#comp-header-stat {
+    line-height: 1.45
+}
+
+#comp-progress {
+    position: relative;
+    height: 13px;
+    margin-bottom: 2px
+}
+
+#comp-progress-start,
+#comp-progress-end,
+.circle {
+    height: 13px;
+    width: 13px;
+    top: 0;
+    border-radius: 100%;
+    border: 2px solid white
+}
+
+#comp-progress-full {
+    position: relative;
+    background: #adc0c7;
+    height: 5px;
+    top: 4px;
+    margin-bottom: 0
+}
+
+#comp-progress-going {
+    background: #008abc;
+    width: 0;
+    color: white;
+    height: 5px;
+    box-sizing: border-box;
+    float: left
+}
+
+#comp-progress-start {
+    position: absolute;
+    left: -3px;
+    background: #008abc
+}
+
+#comp-progress-end {
+    position: absolute;
+    right: -3px;
+    background: #adc0c7
+}
+
+.comp-progress-milestone {
+    position: absolute;
+    top: 0;
+    left: 90%
+}
+
+.comp-progress-milestone .circle {
+    background: #adc0c7
+}
+
+.comp-progress-milestone .milestone-key {
+    position: absolute;
+    top: -2em;
+    left: -4em;
+    white-space: nowrap
+}
+
+#comp-header-start,
+#comp-milestone-end,
+#comp-header-end {
+    font-size: 12px;
+    color: #4A4A4A
+}
+
+#comp-header-start {
+    float: left
+}
+
+#comp-milestone-end {
+    position: absolute;
+    top: -2em;
+    right: 0;
+}
+
+#comp-header-end {
+    float: right
+}
+
+#id-data-table {
+    width: 100%;
+    margin: auto;
+    text-align: left
+}
+
+.page-info {
+    opacity: .8;
+    font-size: .8em
+}
+
+.page-info .team-name {
+    font-weight: bold
+}
+
+.leaderboard-info {
+    opacity: .8;
+    font-size: .8em
+}
+
+#id-submission-table {
+    width: 100%
+}
+
+#id-submission-table th {
+    line-height: 1.5
+}
+
+#id-leaderboard {
+    width: 100%;
+    margin: 0 auto 1em;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    font-size: 1em
+}
+
+#id-leaderboard td {
+    padding: .5em .25em
+}
+
+#id-leaderboard th {
+    padding: 1.5em 0 .5em;
+    text-align: center;
+    vertical-align: bottom;
+    font-size: .75em;
+    font-weight: bold;
+    color: #888;
+    display: table-cell
+}
+
+#id-leaderboard th:first-child,
+#id-leaderboard td:first-child {
+    padding-left: 1em;
+    text-align: center;
+    font-size: .75em
+}
+
+#id-leaderboard th:nth-child(3),
+#id-leaderboard td:nth-child(3),
+#id-leaderboard th:nth-child(6),
+#id-leaderboard td:nth-child(6) {
+    padding-left: .75em;
+    text-align: left
+}
+
+#id-leaderboard tr:nth-child(2) {
+    width: 40px
+}
+
+#id-leaderboard .rank {
+    opacity: .7
+}
+
+#id-leaderboard .score {
+    color: #2699c7;
+    max-width: 25em;
+    overflow: hidden
+}
+
+#id-leaderboard .team-up {
+    color: green
+}
+
+#id-leaderboard .team-down {
+    color: red
+}
+
+#id-leaderboard .delta {
+    font-size: .75em
+}
+
+#id-leaderboard ul.team-members {
+    padding-left: 0;
+    margin-top: .5em;
+    display: none
+}
+
+#id-leaderboard ul.team-members li {
+    color: #888;
+    list-style: disc inside;
+    padding-left: 1em;
+    font-size: .8em;
+    line-height: 1.3
+}
+
+#id-leaderboard td.result {
+    background-color: #2aa6d7;
+    color: white;
+    font-size: 1em;
+    padding: 1em .75em 1em;
+    text-align: left
+}
+
+#id-leaderboard a {
+    text-decoration: none;
+    color: inherit
+}
+
+#id-upload-div {
+    background: #8bc4ea;
+    position: relative;
+    text-align: center;
+    height: 7.5em;
+    padding-top: 2em;
+    cursor: pointer
+}
+
+#id-upload-div #id-fileupload {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute
+}
+
+#id-progress-div {
+    height: 2em
+}
+
+#id-progress-div .progress-bar {
+    height: 100%;
+    border-radius: .2em
+}
+
+#id-error-text {
+    margin-bottom: 0
+}
+
+#id-description-div {
+    background-color: #f7f7f7;
+    padding: 1em
+}
+
+#id-description-div textarea {
+    width: 100%
+}
+
+#id-submit {
+    display: block;
+    margin: 1em auto 5px
+}
+
+#id-submit-as {
+    text-align: center
+}
+
+#id-submit-as div {
+    padding: 0
+}
+
+#id-submit-as div:first-child {
+    border-right: 1px solid #888
+}
+
+#id-submit-as a {
+    margin: auto
+}
+
+#id-submit-as p {
+    text-align: center;
+    padding: 0 10%
+}
+
+.captcha {
+    height: 100%;
+    margin-left: 20px
+}
+
+.captcha-input {
+    width: 100px;
+    overflow: hidden;
+    float: left
+}
+
+.container-thin form {
+    margin: 30px auto
+}
+
+.container-thin form label {
+    text-align: left
+}
+
+form .checkbox {
+    padding-left: 0
+}
+
+.asteriskField {
+    display: none
+}
+
+#id-profile-edit-form fieldset {
+    background: #f7f7f7;
+    margin-bottom: 25px
+}
+
+#id-profile-edit-form fieldset legend {
+    background: #f7f7f7;
+    padding-top: 20px;
+    padding-left: 20px
+}
+
+#id-profile-edit-form fieldset>div {
+    margin-left: 25px
+}
+
+#id-profile-edit-form input[type=submit] {
+    width: 200px!important
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px
+}
+
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0)
+}
+
+.container-thin {
+    max-width: 600px;
+    margin: 100px auto
+}
+
+.container-thin h1,
+.container-thin h3,
+.container-thin p {
+    text-align: center
+}
+
+h3 {
+    font-size: 30px;
+    margin-bottom: .75em
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: .8em
+}
+
+ul.message-list {
+    padding-left: 0;
+    list-style: none;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: left;
+    margin: 0
+}
+
+ul.message-list li {
+    height: 100px
+}
+
+ul.message-list div.wrapper {
+    height: 100px;
+    line-height: 100px
+}
+
+ul.message-list .message-error {
+    background-color: #ef877f
+}
+
+ul.message-list .message-success {
+    background-color: #baf9e6
+}
+
+ul.message-list .message-info {
+    background-color: #def6ff
+}
+
+.thumbnail {
+    height: 320px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px 0 #DCD9D9;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.thumbnail h4 {
+    padding-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+.thumbnail h4 a {
+    color: #4A4A4A;
+    font-size: 16px;
+}
+
+.thumbnail h4 a span {
+    color: #4A4A4A;
+}
+
+.thumbnail a>img {
+    margin-left: auto;
+    margin-right: auto;
+    height: 90px;
+    width: 90px
+}
+
+.thumbnail .des_text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.breadcrumb {
+    margin-top: 20px
+}
+
+.userinfo-header span.personal_tag {
+    font-size: 16px;
+    margin-left: 10px;
+    text-wrap: normal
+}
+
+.userinfo-header span.display_name {
+    font-size: 36px;
+    font-weight: bold
+}
+
+.competition-info {
+    font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+.competition-info .header {
+    font-size: .9em;
+    font-weight: 600;
+    color: #4990E2;
+}
+
+.competition-info .title {
+    font-size: 30px;
+    font-weight: bold
+}
+
+.detail-table {
+    width: 100%;
+    margin-top: 5px
+}
+
+.detail-table caption {
+    margin: 0;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    background: #79aec8;
+    color: #fff
+}
+
+.detail-table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit
+}
+
+.detail-table td,
+.detail-table th {
+    font-size: 13px;
+    line-height: 16px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+    padding: 8px;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif
+}
+
+.detail-table th {
+    font-weight: 600;
+    text-align: left;
+    width: 100%;
+    padding: 8px;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif
+}
+
+.detail-table a.addlink {
+    padding-left: 16px;
+    background: url("/static/img/icon-addlink.d519b3bab011.svg") 0 1px no-repeat
+}
+
+.detail-table a.editlink {
+    padding-left: 16px;
+    background: url("/static/img/icon-changelink.18d2fd706348.svg") 0 1px no-repeat
+}
+
+.tool {
+    background: #999;
+    border-radius: 15px;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: #fff;
+    padding: 3px 12px;
+    background-repeat: no-repeat;
+    background-position: 93% center;
+    padding-right: 26px
+}
+
+.tool.addlink {
+    background-image: url("/static/img/tooltag-add.e59d620a9742.svg")
+}
+
+.info-table {
+    width: 100%;
+    margin-top: 5px
+}
+
+.info-table caption {
+    margin: 0;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    background: #79aec8;
+    color: #fff
+}
+
+.info-table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit
+}
+
+.info-table td,
+.info-table th {
+    border-bottom: 1px solid #eee
+}
+
+.info-table td {
+    font-size: 13px;
+    line-height: 16px;
+    vertical-align: top;
+    padding: 8px;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif
+}
+
+.info-table th {
+    font-weight: 600;
+    text-align: left;
+    vertical-align: center;
+    width: 200px;
+    padding: 8px;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif
+}
+
+.info-table a.addlink {
+    padding-left: 16px;
+    background: url("/static/img/icon-addlink.d519b3bab011.svg") 0 1px no-repeat
+}
+
+.info-table a.editlink {
+    padding-left: 16px;
+    background: url("/static/img/icon-changelink.18d2fd706348.svg") 0 1px no-repeat
+}

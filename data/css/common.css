@@ -1,0 +1,431 @@
+*{
+    -webkit-overflow-scrolling : touch;
+}
+body{
+    min-width: 1000px;
+}
+
+a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
+
+.transform_scale{
+    letter-spacing: 0.01rem;
+    word-spacing: 0.01rem;
+    -moz-transform:scale(0.7,0.7);
+    -webkit-transform:scale(0.7,0.7);
+    -o-transform:scale(0.7,0.7);
+    transform: scale(0.7,0.7);
+}
+
+
+.mask{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: none;
+}
+
+.mask .instructions{
+    position: absolute;
+    background: #fff;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    overflow: auto;
+    border-radius: 5px;
+}
+
+.mask .instructions .close{
+    position: fixed;
+    right: 10%;
+    top: 10%;
+    padding:5px 10px 5px 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mask .instructions p{
+    line-height: 35px;
+    font-size: 1.5rem;
+}
+
+.mask .instructions ul{
+    padding:10px 15px 30px;
+}
+
+.mask .instructions ul li{
+    line-height: 20px;
+    text-align: left;
+    text-indent:1rem;
+    margin-bottom: 5px;
+}
+
+.mask .instructions ul .label{
+    text-indent:0rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.header .header_info,.date .date_info,.content .info,.logo .search
+{
+    width: 800px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.logo{
+    background-color: #f6501e;
+}
+
+.logo .search{
+    height: 50px;
+}
+
+
+.logo .search div{
+    float: left;
+    height: 50px;
+    width: 50%;
+    line-height: 50px;
+    text-align: left;
+    position: relative;
+    color: #fff;
+}
+
+.logo .search .right_div{
+    text-align: right;
+}
+
+.logo .search div span{
+    font-size: 2.5rem;
+}
+
+.logo .search div .right{
+    font-weight: bold;
+}
+
+.logo .search div input{
+    text-align: left;
+    padding-left: 5px;
+    font-size: 1rem;
+    width: 220px;
+    height: 20px;
+    border: 0;
+    padding-right: 25px;
+}
+
+.logo .search div i{
+    cursor: pointer;
+    width: 20px;
+    height: 18px;
+    background-color: red;
+    background-image: url('../images/ss.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 2px;
+    top: 16px;
+}
+
+
+.header{
+    background-color: #eaecee;
+}
+
+.header .header_info{
+    overflow:hidden;
+}
+
+.date{
+    padding: 10px 0px;
+    background-color: #f3f4f6;
+}
+
+.date .date_info{
+    padding: 0;
+    height:25px;
+}
+
+.date .select_data1{
+    position: absolute;
+    left:0px;
+    line-height:23px;
+    z-index: 2;
+    cursor: pointer;
+    border: 1px #00CFB0 solid;
+}
+
+.date .select_data1 .ok{
+    color: #00CFB0;
+    font-size: 15px;
+    padding-left: 5px;
+}
+
+.date .select_data1 .down{
+    overflow: hidden;
+    height: 10px;
+    display: inline-block;
+    font-size:25px;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.date .select_data1 .select{
+    background: #F3F4F8;
+    display: none;
+}
+
+.date .select_data1 .select .option{
+    text-align: left;
+    color: #9fa0a0;
+    padding-left: 5px;
+    border-top: 1px #00CFB0 solid;
+}
+
+.date .select_data1 .select .option:hover{
+    color: #00CFB0;
+    background: #eaecee;
+}
+
+.date .select_data1 select{
+    // font-size:50px;
+}
+
+.date div{
+    line-height: 25px;
+    z-index: 1;
+}
+
+.date div .date_num{
+    background-color: #00cfad;
+    color:#fff;
+    padding:5px 3px;
+}
+
+.date div .down{
+    overflow: hidden;
+    height: 10px;
+    display: inline-block;
+    font-size:25px;
+}
+
+.content{
+    padding-bottom: 70px;
+    background-color: #ffffff;
+}
+
+@media (max-width:900px){
+    .content .go_top{
+        right: 50px;
+        left: auto !important;
+    }
+    
+}
+
+
+.content .go_top{
+    background: #fff url('../images/top.png') center no-repeat;
+    position: fixed;
+    border: 1px #e6e6e6 solid;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    bottom: 100px;
+    left: 50%;
+    margin-left: 450px;
+    cursor: pointer;
+    display:none;
+    z-index:99;
+}
+
+.content .info{
+    background-color: #fff;
+    padding: 0px;
+    overflow:hidden;
+    margin-bottom: 100px;
+}
+
+
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left:0;
+    margin: 0 auto;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #f6501e;
+    color: #fff;
+    z-index:99;
+}
+
+.footer p{
+    line-height: 20px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+.blur .title{
+    /*background-color: #85275D;*/
+    background-image: url(../images/qp.png);
+}
+
+.blur .number{
+    // background-color: #f6501e;
+}
+
+.blur thead tr th div{
+    color: #00cfad;
+    /*text-overflow: ellipsis;*/
+    /*white-space: nowrap;*/
+    /*word-break: break-all;*/
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.chart .echart{
+    margin: 20px auto;
+}
+
+.chart ul{
+    height: 30px;
+    margin: 0 auto 10px;
+}
+
+.chart ul li{
+    float:left;
+    padding:0 10px;
+    margin: 15px 0 0px;
+    border-left:1px #e6e6e6 solid;
+}
+
+.chart ul .first{
+    border:none;
+    padding:0 20px;
+}
+
+.chart ul li a{
+    color: #c2c3c3;
+}
+
+.chart ul .active a{
+    color:#f6501e;
+    border-bottom: 3px #f6501e solid;
+    padding-bottom: 3px;
+}
+
+.chart ul li a:hover{
+    color:#f6501e;
+    border-bottom: 3px #f6501e solid;
+    padding-bottom: 3px;
+}
+
+.chart .date_check{
+
+}
+
+.chart .date_check{
+    padding: 10px 0px;
+    background-color: #f3f4f6;
+}
+
+.chart .date_check .date_info{
+    padding: 0;
+    height:25px;
+}
+
+.chart .date_check .select_data1{
+    position: absolute;
+    left:5px;
+    line-height:25px;
+    z-index: 2;
+}
+
+.chart .date_check .select_data1 select{
+    // font-size:50px;
+}
+
+.chart .date_check div{
+    line-height: 25px;
+    z-index: 1;
+}
+
+.chart .date_check div .date_num{
+    background-color: #00cfad;
+    color:#fff;
+    padding:5px 3px;
+}
+
+.chart .date_check div .down{
+    overflow: hidden;
+    height: 10px;
+    display: inline-block;
+    font-size:25px;
+}
+
+.chart .date_check .title{
+    position: absolute;
+    top: 10px;
+    right:10px;
+    line-height:25px;
+    z-index: 2;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.jtt{
+    border-width: 0 5px 5px 5px !important;
+    border-style: none solid solid solid !important;
+    border-color: #f6501e transparent;
+    width: 0;
+    height: 0;
+    margin: 10px auto 0px;
+}
+
+.jtb{
+    border-width: 5px 5px 0 5px;
+    border-style: solid solid none solid;
+    border-color: #f6501e transparent;
+    width: 0;
+    height: 0;
+    margin: 10px auto 0px;
+
+    /*animation: myfirst 1s infinite ease;*/
+    /*-moz-animation: myfirst 1s infinite ease;	!* Firefox *!*/
+    /*-webkit-animation: myfirst 1s infinite ease;	!* Safari 和 Chrome *!*/
+    /*-o-animation: myfirst 1s infinite ease;	!* Opera *!*/
+}
+
+
+@keyframes myfirst
+{
+    from {
+        top:0px;}
+    to {
+        top:3px;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+    from {
+        top:0px;}
+    to {
+        top:3px;}
+}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+    from {
+        top:0px;}
+    to {
+        top:3px;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+    from {
+        top:0px;}
+    to {
+        top:3px;}
+}

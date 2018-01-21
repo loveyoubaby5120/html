@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)https://biendata.com/ -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="icon" type="image/png" href="https://biendata.com/static/img/favicon.png">
+
+    <title>人才库</title>
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+    <link href="./css/controls.css" rel="stylesheet" type="text/css" media="screen,projection" />
+    <link href="./css/common.css" rel="stylesheet" type="text/css" />
+
+    <script type="application/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <script type="application/javascript" src="./js/bootstrap.min.js"></script>
+
+</head>
+
+<body class='index'>
+    <div class='head'>
+        <div class='login'>
+                DeepTech
+        </div>
+        <div class='nav'>
+            <span aria-hidden="true" class="glyphicon glyphicon-search"></span>
+            <div class='input'>
+                <input type="text" placeholder="搜索">
+            </div>
+        </div>
+        <div class='admin' id='admin-user-info'>
+        <a>
+            <span class='admin-background'>
+                <span class='fa fa-user'></span>
+                用户名
+            </span>
+            <span class="fa fa-caret-down glyphicon"></span>
+        </a>
+        <div class='user-center'>
+            <a href='/user/logout'>退出</a>
+        </div>
+    </div>
+    </div>
+    <div class='body'>
+        <div class="menu">
+            <div class="panel-group table-responsive" role="tablist" id='accordion' aria-multiselectable="true">
+                <div class="panel panel-primary leftMenu">
+                    <!-- 利用data-target指定要折叠的分组列表 -->
+                    <div class="panel-heading" id="collapseListGroupHeading1" data-toggle="collapse" data-parent="#accordion"  data-target="#collapseListGroup1" role="tab" >
+                        <h4 class="panel-title">
+                            <i class="fa fa-star"></i>
+                            榜单
+                            <span class="fa fa-caret-up right"></span>
+                        </h4>
+                    </div>
+                    <!-- .panel-collapse和.collapse标明折叠元素 .in表示要显示出来 -->
+                    <div id="collapseListGroup1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading1">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <!-- 利用data-target指定URL -->
+                                <button class="menu-item-left active" data-target="test2.html">
+                                    人工智能
+                                </button>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="menu-item-left">
+                                    机器学习
+                                </button>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="menu-item-left">
+                                    数据挖掘
+                                </button>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="menu-item-left">
+                                    自动驾驶
+                                </button>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="menu-item-left">
+                                    NLP
+                                </button>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="menu-item-left">
+                                    计算机视觉
+                                </button>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="menu-item-left">
+                                    多媒体
+                                </button>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="menu-item-left">
+                                    计算机图形
+                                </button>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="menu-item-left">
+                                    自动化
+                                </button>
+                            </li>
+                            <li class="list-group-item">
+                                <button class="menu-item-left">
+                                    数据库
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--panel end-->
+                <div class="panel panel-primary leftMenu">
+                    <div class="panel-heading collapsed" id="collapseListGroupHeading2" data-toggle="collapse" data-parent="#accordion"  data-target="#collapseListGroup2" role="tab" >
+                        <h4 class="panel-title">
+                            <i class="fa fa-user"></i>
+                            人才库
+                            <span class="fa fa-caret-down right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapseListGroup2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2">
+                        <ul class="list-group">
+                        </ul>
+                    </div>
+                </div>  
+                <div class="panel panel-primary leftMenu">
+                    <div class="panel-heading collapsed" id="collapseListGroupHeading3" data-toggle="collapse" data-parent="#accordion"  data-target="#collapseListGroup3" role="tab" >
+                        <h4 class="panel-title">
+                            <i class="fa fa-list-alt"></i>
+                            论文
+                            <span class="fa fa-caret-down right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
+                        <ul class="list-group">
+                        </ul>
+                    </div>
+                </div>  
+                <div class="panel panel-primary leftMenu">
+                    <div class="panel-heading collapsed" id="collapseListGroupHeading4" data-toggle="collapse" data-parent="#accordion"  data-target="#collapseListGroup4" role="tab" >
+                        <h4 class="panel-title">
+                            <i class="fa fa-video-camera"></i>
+                            媒体报道
+                            <span class="fa fa-caret-down right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapseListGroup4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading4">
+                        <ul class="list-group">
+                        </ul>
+                    </div>
+                </div>  
+                <div class="panel panel-primary leftMenu">
+                    <div class="panel-heading collapsed" id="collapseListGroupHeading5" data-toggle="collapse" data-parent="#accordion"  data-target="#collapseListGroup5" role="tab" >
+                        <h4 class="panel-title">
+                            <i class="fa fa-lightbulb-o"></i>
+                            专利
+                            <span class="fa fa-caret-down right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapseListGroup5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading5">
+                        <ul class="list-group">
+                        </ul>
+                    </div>
+                </div>  
+                <div class="panel panel-primary leftMenu">
+                    <div class="panel-heading collapsed" id="collapseListGroupHeading6" data-toggle="collapse" data-parent="#accordion"  data-target="#collapseListGroup6" role="tab" >
+                        <h4 class="panel-title">
+                            <i class="fa fa-magic"></i>
+                            定制人才库
+                            <span class="fa fa-caret-down right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapseListGroup6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading6">
+                        <ul class="list-group">
+                        </ul>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="content">
+            <div class=' row'>
+                
+                <div class='col-xs-12 card'>
+                    <div class='myTab'>
+                        <div class='rgzn'>
+                            <span>人工智能</span>
+                            <div class='form'>
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label for="orderKey" style='padding-right: 10px'>排序</label>
+                                        <select name="orderKey">
+                                            <option>姓名</option>
+                                            <option>领域</option>
+                                            <option>标签</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label style='padding-right: 10px'>
+                                            <input type="radio" name="order" id="asc" value="asc" checked>
+                                            升序
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="order" id="desc" value="desc">
+                                            降序
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class='myTable'>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width='30%'>人才</th>
+                                        <th width='30%'>领域</th>
+                                        <th width='40%'>标签</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <ul class="media-list">
+                                                <li class="media">
+                                                    <div class="media-left">
+                                                        <a href="#">
+                                                            <div class="media-object" style='background-image: url("./img/tx.jpg")'></div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h4 class="media-heading">
+                                                            <a href="#">Jiawei Han(韩家炜)</a>
+                                                        </h4>
+                                                        <ul class="introduction">
+                                                            <li>大学教授</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <div style='padding-left: 20px;'>
+                                                <ul style='list-style: disc'>
+                                                    <li>Bayesian Networks</li>
+                                                    <li>Bayesian Networks</li>
+                                                    <li>Bayesian Networks</li>
+                                                    <li>Bayesian Networks</li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class='tag'>顶级学府</span>
+                                            <span class='tag'>顶级学府</span>
+                                            <span class='tag'>顶级学府</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+    $(function(){
+        $(".panel-heading").click(function(e){
+            /*切换折叠指示图标*/
+            $(this).find("span.right").toggleClass("fa-caret-down");
+            $(this).find("span.right").toggleClass("fa-caret-up");
+            
+            // $('.panel-heading.collapsed').find('.panel-title>span.right').removeClass('fa-caret-up');
+            // $('.panel-heading.collapsed').find('.panel-title>span.right').removeClass('fa-caret-down');
+            // $('.panel-heading.collapsed').find('.panel-title>span.right').addClass('fa-caret-down');
+        });
+    });
+    </script>
+
+
+</body>
+
+</html>

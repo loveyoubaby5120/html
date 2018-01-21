@@ -1,0 +1,503 @@
+*{
+    -webkit-overflow-scrolling : touch;
+}
+body{
+    background-image:url("../images/bg.jpg");
+    background-attachment: fixed;
+}
+
+.transform_scale{
+    letter-spacing: 0.01rem;
+    word-spacing: 0.01rem;
+    -moz-transform:scale(0.5,0.5);
+    -webkit-transform:scale(0.5,0.5);
+    -o-transform:scale(0.5,0.5);
+    transform: scale(0.5,0.5);
+}
+
+
+body:before {
+  content: ' ';
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("../images/bg.jpg") center 0 no-repeat;
+  background-size: cover;
+}
+
+.mask{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: none;
+}
+
+.mask .instructions{
+    position: absolute;
+    background: #fff;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    overflow: auto;
+    border-radius: 5px;
+}
+
+.mask .instructions .close{
+    position: fixed;
+    right: 10%;
+    top: 10%;
+    padding:5px 10px 5px 10px;
+    font-size: 1.5rem;
+}
+
+.mask .instructions p{
+    line-height: 35px;
+    font-size: 1.5rem;
+}
+
+.mask .instructions ul{
+    padding:10px 15px 30px;
+}
+
+.mask .instructions ul li{
+    line-height: 20px;
+    text-align: left;
+    text-indent:1rem;
+    margin-bottom: 5px;
+}
+
+.mask .instructions ul .label{
+    text-indent:0rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.logo{
+    height: 120px;
+}
+
+.logo div{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    line-height: 35px;
+}
+
+.logo div p{
+    font-size: 1.85rem;
+    font-weight: bolder;
+    color: #eabb13;
+    text-decoration: none;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+
+.logo div .p{
+    font-size: 2.4rem;
+    color: white;
+    -webkit-mask-image:none;
+}
+
+.content{
+    border: 1px solid white;
+    padding: 3px;
+    margin: 15px;
+}
+
+.content .info{
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.introducing{
+    color: #852653;
+    padding:15px 0 0;
+}
+
+.table{
+    margin:20px 8px 0;
+    padding:5px 0 10px;
+    border-top:1px solid rgba(90, 91, 92, 0.5);
+    position: relative;
+}
+
+/*.table .title{*/
+    /*position: absolute;*/
+    /*top: -20px;*/
+    /*left: -5px;*/
+    /*color: #ecc200;*/
+    /*background-color: #85275D;*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+    /*line-height: 20px;*/
+    /*width: 68px;*/
+    /*height: 20px;*/
+    /*border-radius: 5px;*/
+/*}*/
+
+.table .title{
+    position: absolute;
+    top: -13px;
+    left: -5px;
+    color: #ecc200;
+    background-size: cover;
+    background-position: center;
+    line-height: 13px;
+    width: 32px;
+    height: 42px;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -moz-box-align: center;
+    -webkit-box-align:center;
+    box-align:center;
+    -moz-box-pack:center;
+    -webkit-box-pack:center;
+    box-pack:center;
+    display: -webkit-box;
+    display: box;
+    display: -moz-box;
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+}
+
+.table .title .type{
+    -moz-transform:scale(0.7,0.7);
+    -webkit-transform:scale(0.7,0.7);
+    -o-transform:scale(0.7,0.7);
+    transform: scale(0.7,0.7);
+    margin-top: -25%;
+}
+
+table{
+    text-align: center;
+    table-layout: fixed;
+    width: 100%;
+}
+
+table tr{
+    line-height: 15px;
+}
+
+table tr td{
+    padding:5px 2px;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-speace: normal;
+    color: #5a5b5c;
+}
+
+thead tr th{
+    text-align: center;
+    padding: 2px 3px;
+    font-weight: bold;
+}
+
+thead tr th div{
+    display: inline-block;
+    padding: 0 1px;
+    border-radius: 5px;
+    border:1px solid #5a5b5c;
+    width: 100%;
+    color: #85275D;
+}
+
+tbody tr .text div{
+    display: block;
+    width: 200%;
+    margin-left: -50%;
+}
+
+tbody tr .last{
+    color: #d6a57c;
+}
+
+.number{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: white;
+    background-color:#85275D;
+}
+
+.footer{
+    margin: 40px 0 0;
+}
+
+.footer img{
+    margin: 0 0 20px;
+}
+
+.footer span{
+    color: #ecc200;
+}
+
+.footer p{
+    color: #ecc200;
+    line-height: 30px;
+    margin: 0 0 30px;
+    border-bottom: 1px solid white;
+}
+
+hr{
+    display: inline-block;
+    width: 38%;
+    height: 5px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.29);
+    float: left;
+}
+
+.hr2{
+    float: right;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+.blur .title{
+    /*background-color: #85275D;*/
+    background-image: url(../images/dialog.png);
+}
+
+.blur .number{
+    background-color: #85275D;
+}
+
+.blur thead tr th div{
+    color: #85275D;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    text-indent: -0.5rem;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur2 .title{
+    background-color: #3b5d94;
+}
+
+.blur2 .number{
+    background-color: #3b5d94;
+}
+
+.blur2 thead tr th div{
+    color: #3b5d94;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur3 .title{
+    background-color: #3B8C94;
+}
+
+.blur3 .number{
+    background-color: #3B8C94;
+}
+
+.blur3 thead tr th div{
+    color: #3B8C94;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur4 .title{
+    background-color: #3B9477;
+}
+
+.blur4 .number{
+    background-color: #3B9477;
+}
+
+.blur4 thead tr th div{
+    color: #3B9477;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur5 .title{
+    background-color: #863B94;
+}
+
+.blur5 .number{
+    background-color: #863B94;
+}
+
+.blur5 thead tr th div{
+    color: #863B94;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur6 .title{
+    background-color: #943B70;
+}
+
+.blur6 .number{
+    background-color: #943B70;
+}
+
+.blur6 thead tr th div{
+    color: #943B70;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur7 .title{
+    background-color: #943B3B;
+}
+
+.blur7 .number{
+    background-color: #943B3B;
+}
+
+.blur7 thead tr th div{
+    color: #943B3B;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur8 .title{
+    background-color: #94753B;
+}
+
+.blur8 .number{
+    background-color: #94753B;
+}
+
+.blur8 thead tr th div{
+    color: #94753B;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur9 .title{
+    background-color: #BD47B9;
+}
+
+.blur9 .number{
+    background-color: #BD47B9;
+}
+
+.blur9 thead tr th div{
+    color: #BD47B9;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur10 .title{
+    background-color: #009CB5;
+}
+
+.blur10 .number{
+    background-color: #009CB5;
+}
+
+.blur10 thead tr th div{
+    color: #009CB5;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur11 .title{
+    background-color: #00B527;
+}
+
+.blur11 .number{
+    background-color: #00B527;
+}
+
+.blur11 thead tr th div{
+    color: #00B527;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur12 .title{
+    background-color: #2FBF01;
+}
+
+.blur12 .number{
+    background-color: #2FBF01;
+}
+
+.blur12 thead tr th div{
+    color: #2FBF01;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur13 .title{
+    background-color: #E80808;
+}
+
+.blur13 .number{
+    background-color: #E80808;
+}
+
+.blur13 thead tr th div{
+    color: #E80808;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.jtt{
+    border-width: 0 5px 5px 5px !important;
+    border-style: none solid solid solid !important;
+    border-color: #0eb3fe transparent;
+    width: 0;
+    height: 0;
+    margin: 10px auto 0px;
+}
+
+.jtb{
+    border-width: 5px 5px 0 5px;
+    border-style: solid solid none solid;
+    border-color: #0eb3fe transparent;
+    width: 0;
+    height: 0;
+    margin: 10px auto 0px;
+
+    /*animation: myfirst 1s infinite ease;*/
+    /*-moz-animation: myfirst 1s infinite ease;	!* Firefox *!*/
+    /*-webkit-animation: myfirst 1s infinite ease;	!* Safari 和 Chrome *!*/
+    /*-o-animation: myfirst 1s infinite ease;	!* Opera *!*/
+}
+
+
+@keyframes myfirst
+{
+    from {
+        top:0px;}
+    to {
+        top:3px;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+    from {
+        top:0px;}
+    to {
+        top:3px;}
+}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+    from {
+        top:0px;}
+    to {
+        top:3px;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+    from {
+        top:0px;}
+    to {
+        top:3px;}
+}

@@ -1,0 +1,430 @@
+.img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.owl-dots {
+    display: none;
+}
+
+.navbar-inverse {
+    background-color: rgba(15, 20, 33, 0.8);
+    border: 0;
+}
+
+.navbar-center {
+    margin-left: -210px;
+    padding-left: 50%;
+}
+
+.navbar-nav > li{
+    text-align: center;
+}
+
+.navbar-collapse p {
+    margin-bottom: 0;
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+ul.navbar-center > li.active > a,
+ul.navbar-center > li:hover > a{
+    background-color: transparent !important;
+    color: #febb11 !important;
+    border-bottom: 2px solid #febb11;
+}
+
+.navbar-nav .login, .navbar-nav .register {
+    width: 60px;
+    border: 1px solid #febb11;
+    color: #fff !important;
+    padding: 5px 15px;
+    margin-top: 10px;
+    border-radius: 3px;
+    margin: 10px 5px 0;
+    display: inline-block;
+}
+
+.navbar-nav .login{
+    background-color: #febb11 !important;
+    color: #000 !important;
+}
+
+.navbar-nav .login:hover{
+    background-color: #ffa21a !important;
+    color: #000 !important;
+}
+
+.carousel-control.right {
+    opacity: 1;
+    background: #D8D8D8;
+    width: 59px;
+    background: url(../img/right.png) 0 45% no-repeat;
+}
+
+.carousel-control.left {
+    opacity: 1;
+    background: #D8D8D8;
+    width: 59px;
+    background: url(../img/left.png) 0 45% no-repeat;
+}
+
+.carousel-indicators li {
+    border: 0;
+    background: #fff;
+    width: 7px;
+    height: 7px;
+    vertical-align: middle;
+}
+
+.carousel-indicators .active {
+    border: 0;
+    background: #febb11;
+    width: 22px;
+    height: 7px;
+}
+
+.carousel-caption {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+    top: 20%;
+    color: #fff;
+}
+
+.carousel-caption h2 {
+    display: inline-block;
+    letter-spacing: 7px;
+    padding-bottom: 15px;
+    font-size: 30px;
+}
+
+.carousel-caption div {
+    font-size: 40px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.carousel-caption span {
+    letter-spacing: 3px;
+    padding: 5px 0px;
+    color: #fff;
+    display: block;
+    text-align: center;
+}
+
+.carousel-caption .join, .dataSet .join {
+    text-shadow: none;
+    border: 1px solid #febb11;
+    padding: 10px 35px;
+    margin-top: 10px;
+    border-radius: 3px;
+    margin: 30px 5px 0;
+    display: inline-block;
+    background-color: #febb11 !important;
+    color: #000 !important;
+}
+
+.carousel-caption .join:hover, .dataSet .join:hover{
+    text-decoration: none;
+    background-color:#ffa21a !important;
+}
+
+.introduction, .dataSet, .dataAppraisal, .dataShare, .organization {
+    padding: 50px 50px 50px;
+    overflow: hidden;
+}
+
+.introduction h3, .dataSet h3, .dataAppraisal h3, .dataShare h3, .organization h3 {
+    margin-bottom: 50px;
+}
+
+.introduction .left {
+    height: 110px;
+    background-color: #eaedf3;
+}
+
+.introduction .left p {
+    overflow: hidden;  /*自动隐藏文字*/
+    text-overflow: ellipsis; /*文字隐藏后添加省略号*/
+    white-space: nowrap; /*强制不换行*/
+    word-break: break-all;
+}
+
+.introduction .left .hr {
+    border: 2px solid #fec911;
+    width:30px;
+    margin: 20px 0 10px;
+}
+
+.introduction .left .title {
+    font-size: 18px;
+}
+
+.introduction .right {
+    padding-left: 20px;
+}
+
+.introduction .right p{
+    background-color: #e2e7f2;
+    padding: 10px 15px;
+    height: 110px;
+    line-height: 25px !important;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; 
+    overflow: hidden;
+}
+
+.dataSet .owl-owl {
+    padding: 0 180px;
+}
+
+.dataSet .owl-owl .prev,
+.dataSet .owl-owl .next {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background: #fff;
+    line-height: 47px;
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.dataSet .owl-owl .prev:hover,
+.dataSet .owl-owl .next:hover {
+    background: #febb11;
+}
+
+.dataSet .owl-owl .prev {
+    position: absolute;
+    left: 65px;
+    top: 200px;
+}
+
+.dataSet .owl-owl .next {
+    position: absolute;
+    right: 65px;
+    top: 200px;
+}
+
+.dataSet .info{
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px 25px;
+    height: 400px;
+}
+
+.dataSet .info .img {
+    margin: 0 auto;
+}
+
+.dataSet .info .title{
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.dataSet .info .hr{
+    border: 2px solid #febb11;
+    width:30px;
+    margin: 20px auto 10px;
+}
+
+.dataSet .info .content{
+    height: 140px;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7; 
+    overflow: hidden;
+}
+
+.dataSet .info .join{
+    margin: 20px 5px 0; 
+}
+
+.dataAppraisal .thumbnail {
+    box-shadow: none;
+    background: none;
+}
+
+.dataAppraisal .mb30 {
+    padding: 0 20px 0 20px;
+}
+
+.block_wrap_shade {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    /* width: 100%; */
+    width:232px;
+    margin-left: 50%;
+    left: -116px;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 65px;
+    display: none;
+}
+
+.block_wrap_shade a {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #000;
+    background: #febb11;
+    padding: 5px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dataShare ul {
+    overflow: hidden;
+}
+
+.dataShare ul li .card{
+    width:200px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+}
+
+.dataShare ul li .img{
+    width:200px; 
+    height:200px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.dataShare ul li .text {
+    padding: 10px 15px;
+}
+
+.dataShare ul li .text h4 {
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.dataShare ul li .text div {
+    color: #666;
+    height: 50px;
+}
+
+.dataShare ul li .text div p {
+    line-height: 25px !important;
+}
+
+.dataShare ul li .text .hr {
+    border: 2px solid #fec911;
+    width:30px;
+    margin: 20px 0 10px;
+}
+
+.footer {
+    background: #0f1523;
+}
+
+.footer ul {
+    margin-left: -192px;
+    padding-left: 50%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.footer ul li {
+    float: left;
+    margin: 20px;
+}
+
+.footer ul li.n {
+    margin: 20px 0;
+}
+
+.footer ul li a{
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .navbar-center{
+        margin: 7.5px -15px;
+        padding-left: 0;
+    }
+
+    .introduction, .dataSet, .dataAppraisal, .dataShare, .organization {
+        padding: 30px;
+    }
+
+    #myCarousel .text {
+        font-size: 30px;
+    }
+
+    .introduction .left {
+        height: 270px;
+    }
+
+    .introduction .left p {
+        white-space: normal;
+    }
+
+    .introduction .right {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .introduction .right p{
+        height: 270px;
+        -webkit-line-clamp: inherit;
+    }
+
+    .dataSet .owl-owl {
+        padding: 0;
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .dataSet .owl-owl .next, .dataSet .owl-owl .prev {
+        display: none;
+    }
+
+    .dataSet .owl-owl .owl-item{
+        width: 270px !important;
+    }
+
+    .dataShare ul li {
+        padding: 0;
+    }
+
+    .dataShare ul li .card {
+        width: 160px;
+    }
+
+    .dataShare ul li .img{
+        width: 160px;
+        height: 160px;
+    }
+
+    .dataShare ul li .text div {
+        height: 80px;
+    }
+
+    .dataAppraisal .thumbnail {
+        margin: 0 5px;
+    }
+
+    .dataAppraisal .mb30 {
+        padding:0;
+    }
+
+    .thumbnail .des_text {
+        white-space: normal;
+    }
+
+}

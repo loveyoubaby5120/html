@@ -1,0 +1,46 @@
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.table-hover>thead>tr>th {
+    background-color: #e5e5e5;
+    line-height: 35px;
+}
+
+.table-hover>tbody>tr>td {
+    color: #999999;
+    padding: 10px;
+}
+
+.table-hover>tbody>tr>td div {
+    max-height: 64px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; 
+    overflow: hidden;
+}
+
+.table-hover>tbody>tr>td .color000{
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+.info {
+    margin: 30px auto 50px; 
+    background-color: #fff; 
+    padding-bottom: 30px; 
+    border: 1px solid #e5e5e5;
+}
+
+.info .title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    margin: 20px 0;
+}
+
+.info .color999 {
+    color: #999999;
+}

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <meta charset="UTF-8">
+    <title>微信公众号分析</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/index_new_pc.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/echarts.js"></script>
+    <style>
+    .line{
+        fill: none;    
+        stroke: steelblue;
+        stroke-width: 2;
+    }
+    .axis path, .axis line {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2px;
+        shape-rendering: crispEdges;
+    }
+    </style>
+</head>
+<body ng-controller="MyController">
+
+    <div class="mask">
+        <div class="instructions">
+            <i class="close" onclick="(function(){$('.mask').hide(0,function(){$('body').css({'overflow':'auto','position':'relative'});});})()">×</i>
+            <p class="title">说明</p>
+            <ul>
+                <li>通过数据抓取技术和合作方提供的数据，我们获得了数百万个公众号的发布频率、文章内容、实时阅读数和实时点赞数。我们采用了这些数据，结合最前沿的数据分析学术研究，对微信公众号在社交网络中的影响力进行了深入、细致和全面的探索，最后进行了分类和排序。在计算影响力的时候，我们主要进行了以下几种分析：</li>
+                <li class="label">1，指标预测</li>
+                <li>我们利用合作公众号的数据作为训练集，开发出了预测实时转发数和实时粉丝数的模型。并用真实数据对模型的参数进行了校正。我们使用这些指标定量了粉丝活跃度。</li>
+                <li class="label">2，账号分类</li>
+                <li>根据我们构建的语义库，我们选取单字串和二字串作为特征单元，TF-IDF作为权重计算方法，LibSVM作为分类模型，并最终将所有账号分成十二类，分别为：1、新闻资讯，2、时尚生活，3、娱乐影音，4、旅游美食，5、科技IT，6、汽车，7、房产家居，8、运动健身，9、财经理财，10、休闲娱乐，11、游戏动漫，12、健康生活。</li>
+                <li class="label">3、点击和点赞的时间分布</li>
+                <li>我们参考并修改了Yasuko Matsubara等人于2012年提出的SPIKEM模型，统计和分析了阅读数和点赞数随时间的分布涨落情况。SPIKEM模型既考虑了阅读数和点赞数在大时间尺度上的幂指数增衰，也考虑了两者随着时间周期自然波动的特征。</li>
+                <li>结果显示，即使阅读和点赞总数相同，不同的时间分布也会对影响力产生影响，还会改变未来的传播趋势。因此，我们在榜单的影响力和未来趋势指标中考虑了阅读和点赞的时间分布特征。</li>
+                <li class="label">4，公众号文章的文本分析</li>
+                <li>我们利用文本分析和情感分析研究了近50个文本特征，包括文章长度，动词密度，标题用词，以及诱导转发的措辞和标记。此外，我们还将公众号文章的词汇和我们的词袋模型进行了比对（约5000个特征）。之前有研究表明，在Twitter上，即使不考虑关注者数量和发帖时间，措辞本身也会对转发数有显著影响。</li>
+                <li>我们发现，公众号文章在传播上也有类似的特点。因此，我们通过选取并修正合适的特征组合，为公众号文本的文字措辞进行打分，并将之用于影响力和增长趋势的评估中。</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="logo"><div class="search"><div onclick="window.location.href='javascript:;'"><span class="left"></span><span class="right">微信公众号排行榜</span></div><div class="right_div"></div></div></div>
+
+    <div class="header">
+        <div class="header_info">
+            <ul>
+                <li>
+                    <div>
+                        <p class="top">统计截止</p>
+                        <p class="bottom transform_scale">3月22日 12时整</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="top">样本数量</p>
+                        <p class="bottom transform_scale">55555555</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="top">热文数量</p>
+                        <p class="bottom transform_scale">55555555</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="top">阅读数量</p>
+                        <p class="bottom transform_scale">55555555</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="introducing"  ng-click="show();">
+                数据说明
+            </div>
+        </div>
+    </div>
+
+    <div class="date">
+        <div class="date_info">
+            <div class="select_data1">
+
+                <a class='ok' href="javascript:;">最近30天</a><span class='down'>ˇ</span>
+                <ul class="select">
+                    <li class="option">最近30天</li>
+                    <li class="option">最近60天</li>
+                </ul>
+                <!-- 
+                <select>
+                    <option>最近30天</option>
+                    <option>最近60天</option>
+                </select> -->
+            </div>
+            <div>
+                <span class="date_num">2</span>
+                <span class="date_num">0</span>
+                <span class="date_num">1</span>
+                <span class="date_num">6</span>
+                <span>年</span>
+                <span class="date_num">0</span>
+                <span class="date_num">4</span>
+                <span>月</span>
+                <span class="date_num">1</span>
+                <span class="date_num">5</span>
+                <span>日</span>
+                <span></span>
+                <span class="down">ˇ</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="info">
+            <ul class="left">
+                <li class="title">行业</li>
+                <li class="item active"><a href="javascript:;">汽车</a></li>
+            </ul>
+
+            <div class="right">
+                <ul class="option">
+                    <li class="bd"><a href="javascript:;">榜单</a></li>
+                    <li class="qs active"><a href="javascript:;">趋势</a></li>
+                </ul>
+
+                <div class='qs_more'>
+                    <div class="select_new">
+                    <div class="formOptions">
+                    <div class="options">
+                        <div class="query long" style="width:100%;" ng-click="article('data/article_data.json')">
+                            <input class='ok' type='checkbox' name="keyall" id="keyall" onclick="transition(1)" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号'/><label style="margin-left: 20px;" for="keyall">公车改革</label>
+                            <input class='ok' type='checkbox' name="keyall" id="key1" onclick="transition(2)" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号'/><label style="margin-left: 20px;" for="key1">召回</label>
+                            <input class='ok' type='checkbox' name="keyall" id="key2" onclick="transition(3)" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号'/><label style="margin-left: 20px;" for="key2">销量领跑</label>
+                            <input class='ok' type='checkbox' name="keyall" id="key3" onclick="transition(4)" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号'/><label style="margin-left: 20px;" for="key3">新能源</label>
+                           <!-- <input class='ok' type='checkbox' name="keyall" id="key4" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号'/><label style="margin-left: 20px;" for="key4">全部热词</label>
+                            <input class='ok' type='checkbox' name="keyall" id="key5" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号'/><label style="margin-left: 20px;" for="key5">全部热词</label> -->
+                        </div>
+                    </div>
+                </div>
+                    <div class="qs_info">
+                        
+                        <div class="qs_right">
+                            <div class="chart">
+                                <div id="main"></div>
+                                <div id="main2"></div>
+                            </div>
+
+                            <div class="step2">
+                                关键词文章
+                            </div>
+
+                            <ul class="step2_info">
+                                <li ng-repeat='nr in item2' ng-show="$index < 15 || toggle == true" class="item">
+                                    <div class="topic">
+                                        {{nr.topic}}
+                                    </div>
+                                    <div class="writer">
+                                        <span>原创</span>
+                                        <span>撰文 {{nr.writer}}</span>
+                                    </div>
+                                    <div class="introduce">
+                                        <p>
+                                            {{nr.introduce}}
+                                        </p>
+                                    </div>
+                                    <div class="other">
+                                        <div class="other_left">{{nr.time}}</div>
+                                        <div class="other_right2">{{nr.zan}}</div>
+                                        <div class="other_right1">阅读  {{nr.read}}</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <div class="showMore"><div class="last jtb"></div><span>显示更多信息</span></div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class='table blur' style='display:none;'>
+                <div class="bc title"><p class="type ng-binding">排名</p></div>
+                    <table class="bc">
+                        <thead>
+                        <tr>
+                            <th class="w_2"></th>
+                            <th class="w_10"></th>
+                            <th class="w_15"><div><p class="">微信名称</p></div></th>
+                            <th class="w_15"><div><p class="">微信账号</p></div></th>
+                            <th class="w_15"><div><p class="">粉丝黏性</p></div></th>
+                            <th class="w_15"><div><p class="">增长潜力</p></div></th>
+                            <th class="w_20"><div><p class="">粉丝活跃度</p></div></th>
+                            <th class="w_15"><div><p class="">综合热度</p></div></th>
+                            <th class="w_15"><div><p class="">查看详细</p></div></th>
+                            <th class="w_2"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat='nr in item' ng-show="$index < 15 || toggle == true" ng-class="{'even':$index%2 == 0}">
+                            <td></td>
+                            <td ng-click="show();">
+                                <div class="number" ng-class="{'number2':$index<3}">{{$index+1 | number : 0}}</div>
+                            </td>
+                            <td class="text "><div>{{nr.name}}</div></td>
+                            <td class="text "><div>{{nr.number}}</div></td>
+                            <td class="text "><div>{{nr.zh}}</div></td>
+                            <td class="text "><div>{{nr.xd}}</div></td>
+                            <td class="text "><div>{{nr.zc}}</div></td>
+                            <td class="last "><div>{{nr.jd}}</div></td>
+                            <td class="text goto_info"><a href="javascript:;" onclick="window.location.href = 'index_new_pc_info.html';">进入&nbsp;></a></td>
+                            <td></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="showMore" ng-click="showTable($event,0);"><div class="last jtb"></div><span>{{MoreTitle}}</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="go_top" id="go_top" onclick="myScroll()"></div>
+    </div>
+
+    <div class="footer">
+        <p>版权所有 Copyright 2015,ALL Rights Reserved | 京 ICP 备 14052239 号 -2 |</p>
+    </div>
+    <script src="js/app_pc.js"></script>
+
+
+    <script>
+
+        function myScroll() 
+        { 
+            //前边是获取chrome等一般浏览器 如果获取不到就是ie了 就用ie的办法获取 
+            var x=document.body.scrollTop||document.documentElement.scrollTop; 
+            var timer=setInterval(function(){ 
+                x=x-200; 
+                if(x<100) 
+                { 
+                    x=0; 
+                    window.scrollTo(x,x);
+                    var oDiv = document.getElementById('go_top'); 
+                    oDiv.style.display = 'none';
+                    clearInterval(timer); 
+                } 
+                window.scrollTo(x,x); 
+            },30); 
+        } 
+
+        var scrollFunc=function(e){
+            var x = document.body.scrollTop||document.documentElement.scrollTop; 
+            if(x<=0){
+                var oDiv = document.getElementById('go_top'); 
+                oDiv.style.display = 'none';
+            }
+            else{
+                var oDiv = document.getElementById('go_top'); 
+                oDiv.style.display = 'block';
+            }
+        }  
+        /*注册事件*/  
+        if(document.addEventListener){  
+            document.addEventListener('DOMMouseScroll',scrollFunc,false);  
+        }//W3C  
+        window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome/Safari  
+        
+
+        scrollFunc();
+
+
+        $('.date .select_data1').mouseover(function(){
+            var _this = $(this);
+            $(this).find('.select').show();
+            $(this).find('.select').on('click','.option',function(){
+                _this.find('.ok').text($(this).text());
+                _this.find('.select').hide();
+            });
+        }).mouseout(function(){
+            $(this).find('.select').hide();
+        });
+
+
+        $('.content .info .right .option').on('click','li a',function(){
+            $('.table').toggle();$('.qs_more').toggle();
+            $(this).parent().parent().find('li').removeClass('active');$(this).parent().addClass('active');
+        });
+
+    </script>
+<script src="js/d3.v3.min.js"></script>
+<script>
+
+
+var datearray = [];
+var colorrange = [];
+
+var color = 'orange';
+var csvpath = 'data/d3.json';
+
+if (color == "blue") {
+  colorrange = ["#045A8D", "#2B8CBE", "#74A9CF", "#A6BDDB", "#D0D1E6", "#F1EEF6"];
+}
+else if (color == "pink") {
+  colorrange = ["#980043", "#DD1C77", "#DF65B0", "#C994C7", "#D4B9DA", "#F1EEF6"];
+}
+else if (color == "orange") {
+  // colorrange = ["#B30000", "#E34A33", "#FC8D59", "#FDBB84", "#FDD49E", "#FEF0D9"];
+  colorrange = ["#B30000", "#E34A33", "#FC8D59", "#FDBB84"];
+}
+strokecolor = colorrange[0];
+
+format = d3.time.format("%m/%d/%y");
+
+var margin = {top: 20, right: 40, bottom: 80, left: 30};
+var width = 640 - margin.left - margin.right;
+var height = 450 - margin.top - margin.bottom;
+var _legendbottom = -30;
+
+var tooltip = d3.select("#main")
+    .append("div")
+    .attr("class", "remove")
+    .style("position", "absolute")
+    .style("z-index", "20")
+    .style("visibility", "hidden")
+    .style("top", "30px")
+    .style("left", "55px");
+
+var x = d3.time.scale()
+    .range([0, width]);
+
+var y = d3.scale.linear()
+    .range([height-10, 0]);
+
+var z = d3.scale.ordinal()
+    .range(colorrange);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom")
+    .ticks(d3.time.weeks);
+
+var yAxis = d3.svg.axis()
+    .scale(y);
+
+var yAxisr = d3.svg.axis()
+    .scale(y);
+
+var stack = d3.layout.stack()
+    .offset("silhouette")
+    .values(function(d) { return d.values; })
+    .x(function(d) { return d.date; })
+    .y(function(d) { return d.value; });
+
+var nest = d3.nest()
+    .key(function(d) { return d.key; });
+
+var area = d3.svg.area()
+    .interpolate("cardinal")
+    .x(function(d) { return x(d.date); })
+    .y0(function(d) { return y(d.y0); })
+    .y1(function(d) { return y(d.y0 + d.y); });
+
+
+var area2 = d3.svg.area()
+    .interpolate("cardinal")
+    .x(function(d) { return x(d.date); })
+    .y0(function(d) { return height; })
+    .y1(function(d) { return y(d.y0 + d.y); });
+
+
+var a = d3.rgb(255,0,0);    //红色  
+var b = d3.rgb(0,255,0);    //绿色  
+   
+var compute = d3.interpolate(a,b);
+
+// legend
+function renderLegend(){  
+    var legend = svg.selectAll(".legend")  
+        // .data(_colors.domain())  
+        .data(colorrange)
+        .enter()  
+        .append("g")  
+        .attr("class", "legend")  
+        .attr("transform", function(d, i) {  
+            var legendX = i * 120 + margin.left;   //set position for each legend element  
+            var legendY = height - _legendbottom;  
+            return "translate(" + legendX + ", " + legendY + ")";  
+        });  
+
+      
+    legend.append("rect")  
+        .attr("x", 0)  
+        .attr("y", 1)  
+        .attr("width", 16)  
+        .attr("height", 8)  
+        .style("fill", function(d){
+            return d;
+        });  
+      
+    legend.append("text")
+        .data(["公车改革", "召回", "销售领跑", "新能源"])
+        .attr("x", 20)  
+        .attr("y", 9)  
+        .classed("legendtext", true)  
+        .text(function(d) {  
+            return d;  
+        });  
+}  
+
+    
+
+var svg = d3.select("#main").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+function chart(csvpath_url){
+    d3.json(csvpath_url, function(data){
+
+        var LinearGradientArray = [];
+
+        data.forEach(function(d,i){
+            d.dateStr = d.date;
+            d.date = format.parse(d.date);
+            // d.value = +d.value;
+            d.value = parseFloat(d.value.toFixed(2));
+
+
+            var defs = svg.append("defs");
+
+            var linearGradient = defs.append("linearGradient")
+                                .attr("id","linearColor"+i)  
+                                .attr("x1","0%")  
+                                .attr("y1","0%")  
+                                .attr("x2","100%")  
+                                .attr("y2","0%");  
+          
+            var start_color = a.toString();
+            var end_color = a.toString();
+            var item_color = a.toString();
+
+            if(data[0].zf==-1){
+                start_color = b.toString();
+            }
+            if(data[data.length].zf==-1){
+                end_color = b.toString();
+            }
+
+            var start = linearGradient.append("stop")  
+                            .attr("offset","0%")  
+                            .style("stop-color",start_color);
+
+            var offset = 100/data.length;
+
+            data.forEach(function(val,index){
+                if(data[0].zf==-1){
+                    item_color = a.toString();
+                }
+                else{
+                    item_color = b.toString();
+                }
+                var item = linearGradient.append("stop")  
+                                .attr("offset", offset+"%")  
+                                .style("stop-color",item_color);          
+            });
+      
+            var stop = linearGradient.append("stop")  
+                            .attr("offset","100%")  
+                            .style("stop-color",end_color);
+
+            LinearGradientArray.push(LinearGradient);
+
+        });
+
+
+      var layers = stack(nest.entries(data));
+
+      x.domain(d3.extent(data, function(d) { return d.date; }));
+      y.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
+
+
+        // var defs = svg.append("defs");
+          
+        // var linearGradient = defs.append("linearGradient")  
+        //                         .attr("id","linearColor")  
+        //                         .attr("x1","0%")  
+        //                         .attr("y1","0%")  
+        //                         .attr("x2","100%")  
+        //                         .attr("y2","0%");  
+          
+        // var stop1 = linearGradient.append("stop")  
+        //                 .attr("offset","0%")  
+        //                 .style("stop-color",a.toString());
+        // var stop3 = linearGradient.append("stop")  
+        //                 .attr("offset","50%")  
+        //                 .style("stop-color",b.toString());
+  
+        // var stop2 = linearGradient.append("stop")  
+        //                 .attr("offset","100%")  
+        //                 .style("stop-color",a.toString());
+
+
+
+      svg.selectAll(".layer")
+          .data(layers)
+        .enter()
+        .append("path")
+          .attr("class", "layer")
+          .attr('data_index', function(d, i){return i;})
+          .attr("d", function(d,i) {return area(d.values);  })
+          .style("fill", function(d, i) { return z(i); })
+          // .attr("d", function(d,i) { if(i==0){return area2(d.values);} return area(d.values);  })
+          .style("fill",function(d,i){
+            return "url(#" + LinearGradientArray[i].attr("id") + ")";
+          });
+
+        
+          
+
+
+      svg.append("g")
+          .attr("class", "x axis")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis);
+
+
+      svg.append("g")
+          .attr("class", "y axis")
+          .call(yAxis.orient("left"));
+
+      svg.selectAll(".layer")
+        .attr("opacity", 1)
+        .on("mouseover", function(d, i) {
+          svg.selectAll(".layer").transition()
+          .duration(250)
+          .attr("opacity", function(d, j) {
+            return j != i ? 0.6 : 1;
+        })})
+
+        .on("mousemove", function(d, i) {
+          mousex = d3.mouse(this);
+          mousex = mousex[0];
+          var invertedx = x.invert(mousex);
+          invertedx = invertedx.getMonth() + invertedx.getDate();
+          var selected = (d.values);
+          for (var k = 0; k < selected.length; k++) {
+            datearray[k] = selected[k].date
+            datearray[k] = datearray[k].getMonth() + datearray[k].getDate();
+          }
+
+          mousedate = datearray.indexOf(invertedx);
+          pro = d.values[mousedate].value;
+
+          d3.select(this)
+          .classed("hover", true)
+          .attr("stroke", strokecolor)
+          .attr("stroke-width", "0.5px"), 
+          tooltip.html( "<p>" + d.key + "<br>" + pro + "<br>" + d.values[mousedate].dateStr + "</p>" ).style("visibility", "visible");
+          
+        })
+        .on("mouseout", function(d, i) {
+         svg.selectAll(".layer")
+          .transition()
+          .duration(250)
+          .attr("opacity", "1");
+          d3.select(this)
+          .classed("hover", false)
+          .attr("stroke-width", "0px"), tooltip.html( "<p>" + d.key + "<br>" + pro + "<br>" + d.values[mousedate].dateStr +  "</p>" ).style("visibility", "hidden");
+      })
+        
+      var vertical = d3.select("#main")
+            .append("div")
+            .attr("class", "remove")
+            .style("position", "absolute")
+            .style("z-index", "19")
+            .style("width", "1px")
+            .style("height", "380px")
+            .style("top", "10px")
+            .style("bottom", "30px")
+            .style("left", "0px")
+            .style("background", "#fff");
+
+      d3.select("#main")
+          .on("mousemove", function(){  
+             mousex = d3.mouse(this);
+             mousex = mousex[0] + 5;
+             vertical.style("left", mousex + "px" )})
+          .on("mouseover", function(){  
+             mousex = d3.mouse(this);
+             mousex = mousex[0] + 5;
+             vertical.style("left", mousex + "px")});
+
+          renderLegend();
+    });
+}
+
+chart(csvpath);
+
+function transition(index) {
+    d3.selectAll('#main g *').remove();
+
+    d3.selectAll('#main .remove').remove();
+
+    chart('data/d3_'+index+'.json');
+
+
+    data = [ // <-C
+        [
+            {x: 0, y: 0},{x: 1, y: 9},{x: 2, y: 7},
+            {x: 3, y: 5},{x: 4, y: 3},{x: 6, y: 4},
+            {x: 7, y: 2},{x: 8, y: 3},{x: 9, y: 2}
+        ],
+        
+        d3.range(10).map(function(i){
+            return {x: i, y: Math.sin(i) + 5};
+        })
+    ];
+
+
+    zhexian(data);
+
+}
+
+var data = [ // <-C
+        [
+            {x: 0, y: 5},{x: 1, y: 9},{x: 2, y: 7},
+            {x: 3, y: 5},{x: 4, y: 3},{x: 6, y: 4},
+            {x: 7, y: 2},{x: 8, y: 3},{x: 9, y: 2}
+        ],
+        
+        d3.range(10).map(function(i){
+            return {x: i, y: Math.sin(i+15) + 5};
+        })
+    ];
+
+var width2 = 640,
+    height2 = 400,
+    margin2 = 30,
+    x2 = d3.scale.linear() // <-A
+        .domain([0, 10])
+        .range([margin2, width2 - margin2]),
+    y2 = d3.scale.linear() // <-B
+        .domain([0, 10])
+        .range([height2 - margin2, margin2]);
+    
+
+var line = d3.svg.line() // <-D
+        .x(function(d){return x2(d.x);})
+        .y(function(d){return y2(d.y);});
+    
+var svg2 = d3.select("#main2").append("svg");
+
+svg2.attr("height", height2)
+    .attr("width", width2);
+
+
+ zhexian(data);
+function zhexian(data){
+     
+        
+     svg2.selectAll("path.line")
+            .data(data)
+        .enter()
+            .append("path") // <-E
+            .attr("class", "line")            
+            .attr("d", function(d){return line(d);}); // <-F
+            
+        
+    var xAxis2 = d3.svg.axis()
+            .scale(x2.range([0, quadrantWidth()]))
+            .orient("bottom")
+            .ticks(d3.time.weeks);            
+            
+    var yAxis2 = d3.svg.axis()
+            .scale(y2.range([quadrantHeight(), 0]))
+            .orient("left");
+    
+    svg2.append("g")        
+        .attr("class", "axis")
+        .attr("transform", function(){
+            return "translate(" + xStart() 
+                + "," + yStart() + ")";
+        })
+        .call(xAxis2);
+        
+    svg2.append("g")        
+        .attr("class", "axis")
+        .attr("transform", function(){
+            return "translate(" + xStart() 
+                + "," + yEnd() + ")";
+        })
+        .call(yAxis2);
+        
+    function xStart(){
+        return margin2;
+    }        
+    
+    function yStart(){
+        return height2 - margin2;
+    }
+    
+    function xEnd(){
+        return width2 - margin2;
+    }
+    
+    function yEnd(){
+        return margin2;
+    }
+    
+    function quadrantWidth(){
+        return width2 - 2 * margin2;
+    }
+    
+    function quadrantHeight(){
+        return height2 - 2 * margin2;
+    }    
+ }  
+
+</script>
+</body>
+</html>

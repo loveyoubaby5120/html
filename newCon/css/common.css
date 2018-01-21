@@ -1,0 +1,141 @@
+/*去除默认样式 开始*/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+dl,
+dt,
+dd,
+ol,
+p,
+input,
+select,
+option,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+  font-family: 'Microsoft YaHei';
+}
+ul,
+li,
+ol,
+dl,
+dt,
+dd {
+  list-style: none;
+}
+input,
+button,
+select,
+textarea {
+  border: none;
+  background: none;
+  outline: none;
+}
+textarea {
+  resize: none;
+}
+img {
+  border: none;
+  vertical-align: middle;
+  outline: none;
+}
+a {
+  display: inline-block;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  outline: none;
+  text-decoration: none;
+}
+em,
+i,
+u {
+  font-style: normal;
+}
+b,
+strong {
+  font-weight: normal;
+}
+/*去除默认样式 结束*/
+/*公共样式 开始*/
+body {
+  background: #fff;
+  font-size: 14px;
+  line-height: 24px;
+  color: #666;
+  overflow-x: hidden;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.content {
+  margin: 0px auto;
+  max-width: 1140px;
+  overflow: hidden;
+}
+.CCAIMod {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0px auto;
+  padding: 0px 0 20px;
+  overflow: hidden;
+}
+.CCAIModr_r,
+.CCAIModr_r01 {
+  width: 100%;
+  padding: 0;
+  padding-top: 20px;
+}
+.LPMod_l {
+  display: none;
+  padding-top: 20px;
+}
+@media (min-width: 875px) {
+  .CCAIMod {
+    padding: 0px 15px 0;
+  }
+  .CCAIMod_l {
+    display: block;
+    float: left;
+    width: 23.07%;
+    max-width: 263px;
+    min-width: 200px;
+    padding-top: 40px;
+  }
+  .CCAIModr_r,
+  .CCAIModr_r01 {
+    padding: 0;
+    width: 74.385%;
+    max-width: 848px;
+    float: right;
+    padding-top: 40px;
+  }
+  .CCAIModr_r01 {
+    padding-top: 0px;
+  }
+}
+@media (min-width: 1140px) {
+  .CCAIMod {
+    padding: 0px;
+  }
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/*公共样式 结束*/

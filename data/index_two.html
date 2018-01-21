@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <meta charset="UTF-8">
+    <meta name="viewport" content=" width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>飞拓无限</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/ng-infinite-scroll.min.js"></script>
+</head>
+<body ng-controller="MyController" infinite-scroll='demo.nextPage()' infinite-scroll-disabled='demo.busy' infinite-scroll-distance='1'>
+
+    <div class="mask">
+        <div class="instructions">
+            <i class="close" onclick="(function(){$('.mask').hide(0,function(){$('body').css({'overflow':'auto','position':'relative'});});})()">×</i>
+            <p class="title">说明</p>
+            <ul>
+                <li>通过数据抓取技术和合作方提供的数据，我们获得了数百万个公众号的发布频率、文章内容、实时阅读数和实时点赞数。我们采用了这些数据，结合最前沿的数据分析学术研究，对微信公众号在社交网络中的影响力进行了深入、细致和全面的探索，最后进行了分类和排序。在计算影响力的时候，我们主要进行了以下几种分析：</li>
+                <li class="label">1，指标预测</li>
+                <li>我们利用合作公众号的数据作为训练集，开发出了预测实时转发数和实时粉丝数的模型。并用真实数据对模型的参数进行了校正。我们使用这些指标定量了粉丝活跃度。</li>
+                <li class="label">2，账号分类</li>
+                <li>根据我们构建的语义库，我们选取单字串和二字串作为特征单元，TF-IDF作为权重计算方法，LibSVM作为分类模型，并最终将所有账号分成十二类，分别为：1、新闻资讯，2、时尚生活，3、娱乐影音，4、旅游美食，5、科技IT，6、汽车，7、房产家居，8、运动健身，9、财经理财，10、休闲娱乐，11、游戏动漫，12、健康生活。</li>
+                <li class="label">3、点击和点赞的时间分布</li>
+                <li>我们参考并修改了Yasuko Matsubara等人于2012年提出的SPIKEM模型，统计和分析了阅读数和点赞数随时间的分布涨落情况。SPIKEM模型既考虑了阅读数和点赞数在大时间尺度上的幂指数增衰，也考虑了两者随着时间周期自然波动的特征。</li>
+                <li>结果显示，即使阅读和点赞总数相同，不同的时间分布也会对影响力产生影响，还会改变未来的传播趋势。因此，我们在榜单的影响力和未来趋势指标中考虑了阅读和点赞的时间分布特征。</li>
+                <li class="label">4，公众号文章的文本分析</li>
+                <li>我们利用文本分析和情感分析研究了近50个文本特征，包括文章长度，动词密度，标题用词，以及诱导转发的措辞和标记。此外，我们还将公众号文章的词汇和我们的词袋模型进行了比对（约5000个特征）。之前有研究表明，在Twitter上，即使不考虑关注者数量和发帖时间，措辞本身也会对转发数有显著影响。</li>
+                <li>我们发现，公众号文章在传播上也有类似的特点。因此，我们通过选取并修正合适的特征组合，为公众号文本的文字措辞进行打分，并将之用于影响力和增长趋势的评估中。</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="logo">
+        <img src="images/bg_logo.png" alt="" width="100%" style="width:100%;"/>
+        <div>
+            <p>微信公众号</p>
+            <p class="p">排行榜</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="info">
+            <div class="introducing" ng-click="show();">
+                说明(点击查看)
+            </div>
+            <a href="index.html" style="line-height: 30px;color: #852653;">查看分榜</a>
+            <div ng-repeat='item in demo.items' ng-class="{'table':item.table,'blur':item.blur,
+            'blur2':item.blur2,'blur3':item.blur3,'blur4':item.blur4,'blur5':item.blur5,
+            'blur6':item.blur6,'blur7':item.blur7,'blur8':item.blur8,'blur9':item.blur9,
+            'blur10':item.blur10,'blur11':item.blur11,'blur12':item.blur12,'blur13':item.blur13}"
+            ng-click="showTable($event,$index);"
+            >
+                <div class="bc title"><p class="type ng-binding">{{item.type}}</p></div>
+                <table class="bc">
+                    <thead>
+                    <tr>
+                        <th class="w_10"></th>
+                        <th class="w_15"><div><p class="transform_scale">微信名称</p></div></th>
+                        <th class="w_15"><div><p class="transform_scale">微信账号</p></div></th>
+                        <th class="w_15"><div><p class="transform_scale">粉丝黏性</p></div></th>
+                        <th class="w_15"><div><p class="transform_scale">增长潜力</p></div></th>
+                        <th class="w_15"><div><p class="transform_scale">粉丝活跃度</p></div></th>
+                        <th class="w_15"><div><p class="transform_scale">综合热度</p></div></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat='nr in item.nrs' ng-show="$index < 3 || item.toggle == true">
+                        <td ng-click="show();">
+                            <div class="number transform_scale">{{$index+1 | number : 0}}</div>
+                        </td>
+                        <td class="text transform_scale"><div>{{nr.name}}</div></td>
+                        <td class="text transform_scale"><div>{{nr.number}}</div></td>
+                        <td class="text transform_scale"><div>{{nr.zh}}</div></td>
+                        <td class="text transform_scale"><div>{{nr.xd}}</div></td>
+                        <td class="text transform_scale"><div>{{nr.zc}}</div></td>
+                        <td class="last transform_scale"><div>{{nr.jd}}</div></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <div class="showMore"><div class="last jtb"></div></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <img src="" alt="二维码" width="100%" style="width: 150px;height: 150px;"/>
+        <div>
+            <hr/>
+            <span>Powered by</span>
+            <hr class="hr2"/>
+        </div>
+
+        <p>Fractalist</p>
+    </div>
+    <script src="js/app2.js"></script>
+</body>
+</html>

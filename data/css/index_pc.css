@@ -1,0 +1,570 @@
+*{
+    -webkit-overflow-scrolling : touch;
+}
+body{
+    min-width: 800px;
+}
+
+.transform_scale{
+    letter-spacing: 0.01rem;
+    word-spacing: 0.01rem;
+    -moz-transform:scale(0.7,0.7);
+    -webkit-transform:scale(0.7,0.7);
+    -o-transform:scale(0.7,0.7);
+    transform: scale(0.7,0.7);
+}
+
+
+.mask{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: none;
+}
+
+.mask .instructions{
+    position: absolute;
+    background: #fff;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    overflow: auto;
+    border-radius: 5px;
+}
+
+.mask .instructions .close{
+    position: fixed;
+    right: 10%;
+    top: 10%;
+    padding:5px 10px 5px 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mask .instructions p{
+    line-height: 35px;
+    font-size: 1.5rem;
+}
+
+.mask .instructions ul{
+    padding:10px 15px 30px;
+}
+
+.mask .instructions ul li{
+    line-height: 20px;
+    text-align: left;
+    text-indent:1rem;
+    margin-bottom: 5px;
+}
+
+.mask .instructions ul .label{
+    text-indent:0rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.content .header .header_info,.content .info,.logo .search
+{
+    width: 600px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.logo{
+    background-color: #F3511E;
+}
+
+.logo .search{
+    height: 50px;
+}
+
+
+.logo .search div{
+    float: left;
+    height: 50px;
+    width: 50%;
+    line-height: 50px;
+    text-align: left;
+    position: relative;
+    color: #fff;
+}
+
+.logo .search .right_div{
+    text-align: right;
+}
+
+.logo .search div span{
+    font-size: 2.5rem;
+}
+
+.logo .search div .right{
+    font-weight: bold;
+}
+
+.logo .search div input{
+    text-align: left;
+    padding-left: 5px;
+    font-size: 1rem;
+    width: 220px;
+    height: 20px;
+    border: 0;
+    padding-right: 25px;
+}
+
+.logo .search div i{
+    cursor: pointer;
+    width: 20px;
+    height: 18px;
+    background-color: red;
+    position: absolute;
+    right: 2px;
+    top: 16px;
+}
+
+.content{
+    padding-bottom: 70px;
+    background-color: #F3F4F6;
+}
+
+
+
+.content .header{
+    background-color: #DCE2E2;
+}
+
+.content .header .header_info{
+
+}
+
+.content .header .header_info ul{
+    display: table;
+}
+
+.content .header .header_info ul li{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 20px;
+}
+
+.content .header .header_info ul li div{
+    width: 80px;
+    height: 80px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.content .header .header_info ul li div p{
+    color: #595856;
+}
+
+.content .header .header_info ul li div .bottom{
+    color: #62615F;
+    /*font-size: 0.1rem;*/
+    width: 110%;
+    text-indent: -1rem;
+}
+
+.content .header .header_info .introducing{
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+    padding:3px 15px;
+    background-color: #79BB30;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.content .info{
+    background-color: #fff;
+}
+
+
+.table{
+    margin:0 auto;
+    padding:5px 0 10px;
+    position: relative;
+}
+
+
+.table .title{
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    color: #ecc200;
+    background-size: cover;
+    background-position: center;
+    line-height: 13px;
+    width: 32px;
+    height: 42px;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -moz-box-align: center;
+    -webkit-box-align:center;
+    box-align:center;
+    -moz-box-pack:center;
+    -webkit-box-pack:center;
+    box-pack:center;
+    display: -webkit-box;
+    display: box;
+    display: -moz-box;
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+}
+
+.table .title .type{
+    -moz-transform:scale(0.7,0.7);
+    -webkit-transform:scale(0.7,0.7);
+    -o-transform:scale(0.7,0.7);
+    transform: scale(0.7,0.7);
+    margin-top: -25%;
+}
+
+.table .showMore{
+    margin-top: 5px;
+}
+
+.table .showMore div{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.table .showMore span{
+    padding-left:5px;
+    cursor: pointer;
+    color: #F3511E;
+}
+
+table{
+    text-align: center;
+    table-layout: fixed;
+    width: 100%;
+}
+
+table tr{
+    line-height: 15px;
+}
+
+table tr td{
+    padding:5px 2px;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-speace: normal;
+    color: #5a5b5c;
+}
+
+thead{
+
+}
+
+thead tr th{
+    text-align: center;
+    padding: 2px 3px;
+    font-weight: bold;
+}
+
+thead tr th div{
+    display: inline-block;
+    padding: 0 0;
+    border-radius: 5px;
+    border:1px solid #ACD480;
+    width: 100%;
+    color: #87C245;
+    margin-bottom: 10px;
+}
+
+thead tr th div p{
+    padding: 8px 10px;
+}
+
+tbody .even{
+    background-color: #F5FAFE;
+}
+
+tbody tr .text div{
+    display: block;
+    width: 200%;
+    margin-left: -50%;
+    color: #585755;
+}
+
+tbody tr .last{
+    color: #d6a57c;
+}
+
+
+.number{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: white;
+    background-color:#F3511E;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left:0;
+    margin: 0 auto;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #F3511E;
+    color: #fff;
+}
+
+.footer p{
+    line-height: 20px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+.blur .title{
+    /*background-color: #85275D;*/
+    background-image: url(../images/dialog.png);
+}
+
+.blur .number{
+    background-color: #F3511E;
+}
+
+.blur thead tr th div{
+    color: #87C245;
+    /*text-overflow: ellipsis;*/
+    /*white-space: nowrap;*/
+    /*word-break: break-all;*/
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur2 .title{
+    background-color: #3b5d94;
+}
+
+.blur2 .number{
+    background-color: #3b5d94;
+}
+
+.blur2 thead tr th div{
+    color: #3b5d94;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur3 .title{
+    background-color: #3B8C94;
+}
+
+.blur3 .number{
+    background-color: #3B8C94;
+}
+
+.blur3 thead tr th div{
+    color: #3B8C94;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur4 .title{
+    background-color: #3B9477;
+}
+
+.blur4 .number{
+    background-color: #3B9477;
+}
+
+.blur4 thead tr th div{
+    color: #3B9477;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur5 .title{
+    background-color: #863B94;
+}
+
+.blur5 .number{
+    background-color: #863B94;
+}
+
+.blur5 thead tr th div{
+    color: #863B94;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur6 .title{
+    background-color: #943B70;
+}
+
+.blur6 .number{
+    background-color: #943B70;
+}
+
+.blur6 thead tr th div{
+    color: #943B70;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur7 .title{
+    background-color: #943B3B;
+}
+
+.blur7 .number{
+    background-color: #943B3B;
+}
+
+.blur7 thead tr th div{
+    color: #943B3B;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur8 .title{
+    background-color: #94753B;
+}
+
+.blur8 .number{
+    background-color: #94753B;
+}
+
+.blur8 thead tr th div{
+    color: #94753B;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur9 .title{
+    background-color: #BD47B9;
+}
+
+.blur9 .number{
+    background-color: #BD47B9;
+}
+
+.blur9 thead tr th div{
+    color: #BD47B9;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur10 .title{
+    background-color: #009CB5;
+}
+
+.blur10 .number{
+    background-color: #009CB5;
+}
+
+.blur10 thead tr th div{
+    color: #009CB5;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur11 .title{
+    background-color: #00B527;
+}
+
+.blur11 .number{
+    background-color: #00B527;
+}
+
+.blur11 thead tr th div{
+    color: #00B527;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur12 .title{
+    background-color: #2FBF01;
+}
+
+.blur12 .number{
+    background-color: #2FBF01;
+}
+
+.blur12 thead tr th div{
+    color: #2FBF01;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.blur13 .title{
+    background-color: #E80808;
+}
+
+.blur13 .number{
+    background-color: #E80808;
+}
+
+.blur13 thead tr th div{
+    color: #E80808;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.jtt{
+    border-width: 0 5px 5px 5px !important;
+    border-style: none solid solid solid !important;
+    border-color: #F3511E transparent;
+    width: 0;
+    height: 0;
+    margin: 10px auto 0px;
+}
+
+.jtb{
+    border-width: 5px 5px 0 5px;
+    border-style: solid solid none solid;
+    border-color: #F3511E transparent;
+    width: 0;
+    height: 0;
+    margin: 10px auto 0px;
+
+    /*animation: myfirst 1s infinite ease;*/
+    /*-moz-animation: myfirst 1s infinite ease;	!* Firefox *!*/
+    /*-webkit-animation: myfirst 1s infinite ease;	!* Safari 和 Chrome *!*/
+    /*-o-animation: myfirst 1s infinite ease;	!* Opera *!*/
+}
+
+
+@keyframes myfirst
+{
+    from {
+        top:0px;}
+    to {
+        top:3px;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+    from {
+        top:0px;}
+    to {
+        top:3px;}
+}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+    from {
+        top:0px;}
+    to {
+        top:3px;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+    from {
+        top:0px;}
+    to {
+        top:3px;}
+}

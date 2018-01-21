@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)https://biendata.com/ -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="icon" type="image/png" href="https://biendata.com/static/img/favicon.png">
+
+    <title>biendata</title>
+
+    <script type="application/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <script type="application/javascript" src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <link href="./css/controls.css" rel="stylesheet" type="text/css" media="screen,projection">
+
+    <script type="application/javascript" src="./js/login.js"></script>
+    <script type="application/javascript" src="./js/form.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/select2.css">
+    <script type="application/javascript" src="./js/select2.js"></script>
+    <script type="application/javascript" src="./js/select2.full.js"></script>
+
+    <script src="./js/jquery-ui.min.js" type="application/javascript">
+    </script>
+    <link href="./css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/common.css" rel="stylesheet" type="text/css">
+    <style>
+
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#myCarousel').carousel({
+                    interval: 5000
+                })
+                //鼠标移入样式
+            $(".block_wrap .col-sm-4").mouseover(function() {
+                $(this).find(".block_wrap_shade").show();
+            });
+            //鼠标移开样式
+            $(".block_wrap .col-sm-4").mouseout(function() {
+                $(this).find(".block_wrap_shade").hide();
+            });
+        });
+    </script>
+</head>
+
+<body class='index min-wrapper' style="background-color: rgb(238, 238, 238);">
+    <div class=".container" style="min-height: 1266px;">
+        <div class="row">
+            <nav class="navbar navbar-default navbar-inverse" style="border-radius:0px">
+                <div class="">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            <a class="navbar-brand" href="https://biendata.com/"><img src="./img/site-logo.png"></a>
+                            <ul class="nav navbar-nav">
+                                <!--<li class="f18"><a class="navbar-brand" href="#"><strong>Competition</strong></a></li>-->
+
+                            </ul>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <!--
+                                                                <li><a>
+                                                                    <form action="/i18n/setlang/" method="post">
+                                                                        <input type='hidden' name='csrfmiddlewaretoken' value='uBfB9DQpgn6fhQBqYcfKgzuw0MTaA1RR' />
+                                                                            <input name="next" type="hidden" value=""/>
+                                                                            <select name="language" class="form-control" id="select-voyageedit" style="width:95px;height:30px;font-size:12px" onchange="this.form.submit()">
+                                                                                <option value="en" >English</option>
+                                                                                <option value="zh-hans"  selected="selected">简体中文</option>
+                                                                            </select>
+                                                                    </form>
+                                                                </a></li>
+                                    -->
+
+
+                                <li>
+                                    <form name="form_en" action="https://biendata.com/i18n/setlang/" method="post">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="uBfB9DQpgn6fhQBqYcfKgzuw0MTaA1RR">
+                                        <input name="language" type="hidden" value="en">
+                                    </form>
+                                </li>
+                                <li>
+                                    <p style="color:#fff;padding:15px 15px 5px 15px;">当前活跃参赛者数:3</p>
+                                </li>
+                                <li>
+                                    <a href="javascript:this.document.form_en.submit();">
+                                        <p>English version</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='javascript:;' id="id-login-btn">
+                                        <p>登录</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://biendata.com/user/register/">
+                                        <p style="color:#01E9FB;border: 1px solid #01E9FB;border-radius: 2px;padding:0 8px 0 8px !important;line-height:24px !important">注册</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="wrapper">
+            <div id="id-nav-login" style="display: none">
+                <form id="id-top-login-form" action="https://biendata.com/user/login/" method="post">
+
+
+                    <input type="hidden" name="csrfmiddlewaretoken" value="uBfB9DQpgn6fhQBqYcfKgzuw0MTaA1RR">
+                    <div id="div_id_username" class="form-group">
+                        <div class="controls "> <input class="textinput textInput form-control" id="id_username" maxlength="50" name="username" placeholder="Username" type="text"> </div>
+                    </div>
+                    <div id="div_id_password" class="form-group">
+                        <div class="controls "> <input class="textinput textInput form-control" id="id_password" maxlength="20" name="password" placeholder="Password" type="password"> </div>
+                    </div>
+                    <div class="form-group">
+                        <div id="div_id_remember" class="checkbox"> <label for="id_remember" class=""> <input checked="checked" class="checkboxinput" id="id_remember" name="remember" type="checkbox">
+                                    Remember Me
+                                </label> </div>
+                    </div> <input id="id_next" maxlength="200" name="next" type="hidden">
+                    <div class="form-group">
+                        <div class="controls "> <input type="submit" name="submit" value="登陆" class="btn btn-primary" id="submit-id-submit"> </div>
+                    </div>
+
+                </form>
+
+
+                <p><a href="https://biendata.com/user/forget-password/">忘记密码?</a></p>
+
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div style="background-color: #fff;">
+                <div class="row banner wrapper">
+                    <div class="col-md-3 col-sm-3 col-xs-4 competition-logo">
+
+                        <img src="./img/item2.jpg">
+
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-8 competition-info pt50">
+                        <div class="row header">
+                            <span>中国人工智能学会</span> •
+                            <span>$10, 000</span> •
+
+                            <span>1014 支参赛队伍</span>
+
+                        </div>
+                        <div class="row title pt10">
+                            2016 Byte Cup国际机器学习竞赛
+                        </div>
+
+
+                        <div class="row pt15">
+                            <div id="comp-header-stat">
+                                <div id="comp-progress">
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="comp-header-start">
+                                    2016-08-15
+                                </div>
+                                <div id="comp-milestone-end">
+                                    最终提交
+                                </div>
+                                <div id="comp-header-end">
+                                    2016-11-20
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 当前位置 -->
+            <div class="wrapper" style="padding: 15px 10px;font-size: 15px;">
+                <img src="./img/home-1.png" alt="" style="width: 12px;margin: -3px 3px 0 0;">
+                <span>主页</span>
+                <span>&nbsp;&nbsp;>&nbsp;</span>
+                <span>比赛</span>
+                <span>&nbsp;&nbsp;>&nbsp;</span>
+                <span>2016 Byte Cup国际机器学习竞赛</span>
+                <span>&nbsp;&nbsp;>&nbsp;</span>
+            </div>
+
+            <div class="wrapper" style="padding: 0 10px;margin-bottom: 40px;">
+                <div class="row">
+                    <div class="col-xs-2 p0" id="myScrollspy" style="width: 17.8%">
+                        <ul class="nav nav-tabs nav-stacked" style="width: 100%;margin-top:0;">
+                            <li><span>数据</span></li>
+                            <li class="active" id='nav-1'><a href="#section-1" data-toggle="tab"><span></span>简介</a></li>
+                            <li id='nav-2'><a href="#section-2" data-toggle="tab"><span></span>规则</a></li>
+                            <li id='nav-3'><a href="#section-3" data-toggle="tab"><span></span>数据</a></li>
+                            <li id='nav-4'><a href="#section-4" data-toggle="tab"><span></span>FAQ</a></li>
+                            <li id='nav-5'><a href="#section-5" data-toggle="tab"><span></span>测评方案</a></li>
+                            <li id='nav-6'><a href="#section-6" data-toggle="tab"><span></span>时间轴&奖励</a></li>
+                            <li id='nav-7'><a href="#section-7" data-toggle="tab"><span></span>组织者</a></li>
+                            <li><span>提交</span></li>
+                            <li id='nav-8'><a href="#section-8" data-toggle="tab"><span></span>验证提交</a></li>
+                            <li id='nav-9'><a href="#section-9" data-toggle="tab"><span></span>最终提交</a></li>
+                            <li id='nav-10'><a href="#section-10" data-toggle="tab"><span></span>我的提交</a></li>
+                            <li><span>其他</span></li>
+                            <li id='nav-11'><a href="#section-11" data-toggle="tab"><span></span>我的队伍</a></li>
+                            <li id='nav-12'><a href="#section-12" data-toggle="tab"><span></span>排行榜</a></li>
+                            <li id='nav-13'><a href="#section-13" data-toggle="tab"><span></span>最终得分</a></li>
+                            <li><span>&nbsp;</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-10" style="background-color: #fff;padding: 20px;min-height: 800px;width: 74.6%;margin-left:3.8%;">
+                        <div id="myTabContent" class="tab-content">
+                            <!-- 简介 -->
+                            <div class="tab-pane fade section-1 in active" id="section-1">1</div>
+                            <!-- 规则 -->
+                            <div class="tab-pane fade section-2" id="section-2">2</div>
+                            <!-- 数据 -->
+                            <div class="tab-pane fade section-3" id="section-3"></div>
+                            <!-- FAQ -->
+                            <div class="tab-pane fade section-4" id="section-4"></div>
+                            <!-- 测评方案 -->
+                            <div class="tab-pane fade section-5" id="section-5"></div>
+                            <!-- 时间轴&奖励 -->
+                            <div class="tab-pane fade section-6" id="section-6"></div>
+                            <!-- 组织者 -->
+                            <div class="tab-pane fade section-7" id="section-7"></div>
+                            <!-- 验证提交 -->
+                            <div class="tab-pane fade section-8" id="section-8"></div>
+                            <!-- 最终提交 -->
+                            <div class="tab-pane fade section-9" id="section-9"></div>
+                            <!-- 我的提交 -->
+                            <div class="tab-pane fade section-10" id="section-10"></div>
+                            <!-- 我的队伍 -->
+                            <div class="tab-pane fade section-11" id="section-11"></div>
+                            <!-- 排行榜 -->
+                            <div class="tab-pane fade section-12" id="section-12"></div>
+                            <!-- 最终得分 -->
+                            <div class="tab-pane fade section-13" id="section-13"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <ol class="breadcrumb text-center" style="z-index: 0; position: absolute; bottom: 0px; width: 100%;margin-top:0;background:#192337;height:60px;padding-top:20px;">
+        <li><a class="text-capitalize" href="https://biendata.com/about/">关于</a></li>
+        <li><a class="text-capitalize" href="https://biendata.com/terms/">条款</a></li>
+        <li><a class="text-capitalize" href="https://biendata.com/privacy/">隐私</a></li>
+        <li><a class="text-capitalize" href="https://biendata.com/contact/">联系</a></li>
+    </ol>
+
+    <script>
+        if (window.location.href.indexOf('item.html') > -1) {
+            $('#myTabContent>div').removeClass('in active');
+            $('#section-2').addClass('in active')
+            $('#myScrollspy>ul>li').removeClass('active');
+            $('#nav-2').addClass('active')
+        }
+
+        var time;
+
+        function res() {
+            if ($(document.body).height() < $(window).height()) {
+                $("body>div").css("min-height", $(window).height() - $(".breadcrumb").height() + "px");
+                $(".breadcrumb").css({
+                    "position": "absolute",
+                    "bottom": "0",
+                    "width": "100%"
+                });
+            } else {
+                $(".breadcrumb").css({
+                    "position": "relative",
+                    "bottom": "auto",
+                    "width": "auto"
+                });
+            }
+        };
+
+        res();
+
+        $(window).resize(function() {
+            res();
+        });
+    </script>
+
+
+
+</body>
+
+</html>

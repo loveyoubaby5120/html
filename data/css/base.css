@@ -1,0 +1,82 @@
+/*--------------------------------------------------------------------------------------------------------------------*/
+@charset "utf-8";
+/***** css set*****/
+*{font-family:方正兰亭纤黑,微软雅黑, Arial, "Helvetica Neue", Helvetica, sans-serif;margin: 0;padding:0;text-align: center;font-size: 12px;}
+body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote，th,td{margin:0;padding:0;}
+div{position:relative; }
+/* 要注意表单元素并不继承父级 font 的问题 */
+body,button,input,select,textarea {font:14px \5b8b\4f53,arial,sans-serif;  }
+/* 去掉 table cell 的边距并让其边重合 */
+table {border-collapse:collapse;border-spacing:0;}
+/* 去除默认边框 */
+fieldset,img {border:none;}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {display:block;}
+address,caption, cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+/* 去掉列表前的标识，li 会继承 */
+ol,ul { list-style:none;}
+capation,th{text-align:left;}
+/* 来自yahoo，让标题都自定义，适应多个系统应用 */
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:500;}
+q:before, q:after{content:' '}
+/* 去掉 firefox 下此元素的边框 */
+abbr,acronym { border:none;font-variant:normal;}
+/* 统一上标和下标 */
+sub,sup { font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
+sup {top:-0.5em;}
+sub {    bottom:-0.25em;}
+/* 让链接在 hover 状态下显示下划线 */
+a:hover {text-decoration:underline;}
+
+/* 默认不显示下划线，保持页面简洁 */
+ins,a {text-decoration:none;}
+/* 去除 ie6 & ie7 焦点点状线 */
+a:focus,*:focus {outline:none;}
+/* 一致的 del 样式 */
+del {text-decoration:line-through;}
+/*鼠标手势*/
+.curp{cursor:pointer}
+/*强制一行显示*/
+.oneRow{text-overflow: ellipsis;white-space: nowrap; word-break: break-all;}
+.rows{word-wrap: break-word;word-break: break-all;white-speace: normal;}
+/*固定table大小*/
+.table_layout{table-layout: fixed;}
+/****定位****/
+.tl{text-align:left;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+.z{z-index: auto;}
+.z1{z-index: 1;}
+.z2{z-index: 2;}
+.z3{z-index: 3;}
+.z4{z-index: 4;}
+.z5{z-index: 5;}
+.z9999999{z-index: 9999999;}
+.zoom{zoom:1}
+.hidden{visibility:hidden;}
+.none{display:none;}
+.block {display:block;}
+.inline-block{display: inline-block;}
+/******长度 高度*******/
+.w_1{width: 1%;}
+.w_2{width: 2%;}
+.w_5{width: 5%;}
+.w_10{width: 10%;}
+.w_15{width: 15%;}
+.w_20{width: 20%;}
+.w_25{width: 25%;}
+.w_30{width: 30%;}
+.w_35{width: 35%;}
+.w_40{width: 40%;}
+.w_45{width: 45%;}
+.w_50{width: 50%;}
+.w_55{width: 55%;}
+.w_60{width: 60%;}
+.w_65{width: 65%;}
+.w_70{width: 70%;}
+.w_75{width: 75%;}
+.w_80{width: 80%;}
+.w_85{width: 85%;}
+.w_90{width: 90%;}
+/*--------------------------------------------------------------------------------------------------------------------*/
+
