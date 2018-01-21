@@ -5,12 +5,12 @@
 
 .table-hover>thead>tr>th {
     background-color: #e5e5e5;
-    line-height: 35px;
+    padding: 10px 25px;
 }
 
 .table-hover>tbody>tr>td {
     color: #999999;
-    padding: 10px;
+    padding: 20px 25px;
 }
 
 .table-hover>tbody>tr>td div {
