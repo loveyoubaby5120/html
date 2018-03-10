@@ -1,0 +1,7 @@
+.panel-default {
+    margin-bottom: 20px !important;
+}
+
+.panel-default>.panel-heading {
+    background: none;
+}

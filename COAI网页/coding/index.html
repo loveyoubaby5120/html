@@ -5,109 +5,463 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <link rel="icon" type="image/png" href="https://biendata.com/static/img/favicon.png">
+    <title>COAI网页</title>
 
-    <title>biendata</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+    <link href="./css/controls.css" rel="stylesheet" type="text/css"/>
+    <link href="./css/common.css" rel="stylesheet" type="text/css" />
 
     <script type="application/javascript" src="./js/jquery-1.11.3.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <script type="application/javascript" src="./js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-
-    <link href="./css/controls.css" rel="stylesheet" type="text/css" media="screen,projection">
-
-    <script src="./js/jquery-ui.min.js" type="application/javascript">
-    </script>
-    <link href="./css/jquery-ui.min.css" rel="stylesheet" type="text/css">
-    <link href="./css/common.css" rel="stylesheet" type="text/css">
 </head>
 
-<body class='index min-wrapper' style="background-color: rgb(238, 238, 238);">
-    <div class=".container" style="min-height: 1266px;">
-        <div class="row">
-
-        <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" style="border-radius:0px;margin:0;">
-                <div class="container-fluid" style="max-width: 1200px;">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                            aria-expanded="false">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        <a class="navbar-brand" href="javascript:;"><img src="./img/logo.png" style="height: 50px;padding: 5px 10px 5px;"></a> 
-                    </div>
-    
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">English</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
-        <div class="row center">
-            <div class="wrapper" style="padding: 0 10px;margin-bottom: 40px;">
-                <div class="row">
-                    <div class="col-xs-2 p0" id="myScrollspy" style="width: 17.8%">
-                        <ul class="nav nav-tabs nav-stacked" style="width: 100%;margin-top:0;">
-                            <li><span>数据</span></li>
-                            <li class="active" id='nav-1'><a href="#section-1" data-toggle="tab"><span></span>简介</a></li>
-                            <li id='nav-2'><a href="#section-2" data-toggle="tab"><span></span>规则</a></li>
-                            <li id='nav-3'><a href="#section-3" data-toggle="tab"><span></span>数据</a></li>
-                            <li id='nav-4'><a href="#section-4" data-toggle="tab"><span></span>FAQ</a></li>
-                            <li id='nav-5'><a href="#section-5" data-toggle="tab"><span></span>测评方案</a></li>
-                            <li id='nav-6'><a href="#section-6" data-toggle="tab"><span></span>时间轴&奖励</a></li>
-                            <li id='nav-7'><a href="#section-7" data-toggle="tab"><span></span>组织者</a></li>
-                            <li><span>提交</span></li>
-                            <li id='nav-8'><a href="#section-8" data-toggle="tab"><span></span>验证提交</a></li>
-                            <li id='nav-9'><a href="#section-9" data-toggle="tab"><span></span>最终提交</a></li>
-                            <li id='nav-10'><a href="#section-10" data-toggle="tab"><span></span>我的提交</a></li>
-                            <li><span>其他</span></li>
-                            <li id='nav-11'><a href="#section-11" data-toggle="tab"><span></span>我的队伍</a></li>
-                            <li id='nav-12'><a href="#section-12" data-toggle="tab"><span></span>排行榜</a></li>
-                            <li id='nav-13'><a href="#section-13" data-toggle="tab"><span></span>最终得分</a></li>
-                            <li><span>&nbsp;</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-xs-10" style="background-color: #fff;padding: 20px;min-height: 800px;width: 74.6%;margin-left:3.8%;">
-                        <div id="myTabContent" class="tab-content">
-                            <!-- 简介 -->
-                            <div class="tab-pane fade section-1 in active" id="section-1">1</div>
-                            <!-- 规则 -->
-                            <div class="tab-pane fade section-2" id="section-2">2</div>
-                            <!-- 数据 -->
-                            <div class="tab-pane fade section-3" id="section-3"></div>
-                            <!-- FAQ -->
-                            <div class="tab-pane fade section-4" id="section-4"></div>
-                            <!-- 测评方案 -->
-                            <div class="tab-pane fade section-5" id="section-5"></div>
-                            <!-- 时间轴&奖励 -->
-                            <div class="tab-pane fade section-6" id="section-6"></div>
-                            <!-- 组织者 -->
-                            <div class="tab-pane fade section-7" id="section-7"></div>
-                            <!-- 验证提交 -->
-                            <div class="tab-pane fade section-8" id="section-8"></div>
-                            <!-- 最终提交 -->
-                            <div class="tab-pane fade section-9" id="section-9"></div>
-                            <!-- 我的提交 -->
-                            <div class="tab-pane fade section-10" id="section-10"></div>
-                            <!-- 我的队伍 -->
-                            <div class="tab-pane fade section-11" id="section-11"></div>
-                            <!-- 排行榜 -->
-                            <div class="tab-pane fade section-12" id="section-12"></div>
-                            <!-- 最终得分 -->
-                            <div class="tab-pane fade section-13" id="section-13"></div>
-                        </div>
-                    </div>
-
-                </div>
+<body class='index min-wrapper'>
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" style="border-radius:0px;margin:0;">
+        <div class="container-fluid" style="max-width: 1200px;">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a class="navbar-brand" href="javascript:;"><img src="./img/logo.png" style="height: 50px;padding: 15px 10px 15px;"></a> 
             </div>
 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class='active'>中文</a></li>
+                    <li><span>|</span></li>
+                    <li><a href="#">English</a></li>
+                </ul>
+            </div>
         </div>
+    </nav>
+
+    <div class="center">
+        <div class="wrapper" style="padding: 0 10px;">
+            <div class="" style="overflow: hidden;">
+                <div class="col-xs-2 p0" id="myScrollspy" style="width: 17.8%">
+                    <ul class="nav nav-tabs nav-stacked" style="width: 100%;margin-top:0;">
+                        <li class="active" id='nav-1'><a href="#section-1" data-toggle="tab"><span></span>首页</a></li>
+                        <li id='nav-2'><a href="#section-2" data-toggle="tab"><span></span>科研团队</a></li>
+                        <li id='nav-3'><a href="#section-3" data-toggle="tab"><span></span>发表文章</a></li>
+                        <li id='nav-4'><a href="#section-4" data-toggle="tab"><span></span>开源代码</a></li>
+                        <li id='nav-5'><a href="#section-5" data-toggle="tab"><span></span>最近新闻</a></li>
+                        <li id='nav-6'><a href="#section-6" data-toggle="tab"><span></span>人才招聘</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-10" style="padding: 0 20px 20px;min-height: 800px;width: 74.6%;margin-left:3.8%;">
+                    <div id="myTabContent" class="tab-content">
+                        <!-- 首页 -->
+                        <div class="tab-pane fade section-1 in active" id="section-1">
+                            <p style="font-size: 40px;">欢迎来到</p>
+                            <p style="font-size: 30px;line-height: 35px !important;">清华大学 Conversational AI Group (CoAI) 实验室</p>
+                        </div>
+                        <!-- 科研团队 -->
+                        <div class="tab-pane fade section-2" id="section-2">
+                            <div class="modal-header">
+                                <h4 class="modal-title">科研团队</h4>
+                            </div>
+                            <div class="modal-body" style="padding-top: 30px;">
+                                <div class="media" style="min-height: 80px;margin-bottom: 25px;">
+                                    <div class="media-left" style="padding-right: 30px;">
+                                        <div style="width: 100px;text-align: center;">
+                                            <a href="#">
+                                                <img class="media-object" src="./img/teacher.png" width="50" style="margin: 0 auto;">
+                                            </a>
+                                            <p style="color: #646b88;">教师</p>
+                                        </div>
+                                    </div>
+                                    <div class="media-body" style="border-bottom: 1px solid #e4e6ef;">
+                                        <div style="padding-bottom: 15px;">
+                                            <h4 class="media-heading">
+                                                <span style="color: #007eff;">朱小燕</span>
+                                                <span style="color: #646b88;margin-left: 20px;">教授，博士生导师</span>
+                                            </h4>
+                                            <p style="color: #646b88;line-height: 25px !important;">
+                                                研究方向为智能信息处理，机器学习，文本挖掘，生物信息
+                                            </p>
+                                        </div>
+                                        <div style="padding-bottom: 15px;">
+                                            <h4 class="media-heading">
+                                                <span style="color: #007eff;">黄民烈</span>
+                                                <span style="color: #646b88;margin-left: 20px;">副教授</span>
+                                            </h4>
+                                            <p style="color: #646b88;line-height: 25px !important;">
+                                                    研究方向为人工智能、深度学习、机器学习方法与应用；自然语言处理，自动问答，人机对话系统，情感分析，社交数据挖掘，机器学习，文本挖掘，生物信息
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media" style="min-height: 80px;margin-bottom: 25px;">
+                                    <div class="media-left" style="padding-right: 30px;">
+                                        <div style="width: 100px;text-align: center;">
+                                            <a href="#">
+                                                <img class="media-object" src="./img/doctor.png" width="50" style="margin: 0 auto;">
+                                            </a>
+                                            <p style="color: #646b88;">博士研究生</p>
+                                        </div>
+                                    </div>
+                                    <div class="media-body" style="border-bottom: 1px solid #e4e6ef;">
+                                        <div style="padding-bottom: 15px;">
+                                            <h4 class="media-heading">
+                                                <span>牛艺霖</span>
+                                                <span style="color: #646b88;margin-left: 20px;">2018年入学</span>
+                                            </h4>
+                                        </div>
+                                        <div style="padding-bottom: 15px;">
+                                            <h4 class="media-heading">
+                                                <span>黄斐</span>
+                                                <span style="color: #646b88;margin-left: 20px;">2018年入学</span>
+                                            </h4>
+                                        </div>
+                                        <div style="padding-bottom: 15px;">
+                                            <h4 class="media-heading">
+                                                <span>张正</span>
+                                                <span style="color: #646b88;margin-left: 20px;">2015年入学</span>
+                                            </h4>
+                                        </div>
+                                        <div style="padding-bottom: 15px;">
+                                            <h4 class="media-heading">
+                                                <span style="color: #007eff;">王业全</span>
+                                                <span style="color: #646b88;margin-left: 20px;">2014年入学</span>
+                                            </h4>
+                                        </div>
+                                        <div style="padding-bottom: 15px;">
+                                            <h4 class="media-heading">
+                                                <span>柯沛</span>
+                                                <span style="color: #646b88;margin-left: 20px;">2017年入学</span>
+                                            </h4>
+                                        </div>
+                                        <div style="padding-bottom: 15px;">
+                                            <h4 class="media-heading">
+                                                <span>朱祺</span>
+                                                <span style="color: #646b88;margin-left: 20px;">2018年入学</span>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media" style="min-height: 80px;margin-bottom: 25px;">
+                                    <div class="media-left" style="padding-right: 30px;">
+                                        <div style="width: 100px;text-align: center;">
+                                            <a href="#">
+                                                <img class="media-object" src="./img/master.png" width="50" style="margin: 0 auto;">
+                                            </a>
+                                            <p style="color: #646b88;">硕士研究生</p>
+                                        </div>
+                                    </div>
+                                    <div class="media-body" style="border-bottom: 1px solid #e4e6ef;">
+                                        <div style="padding-bottom: 15px;">
+                                            <h4 class="media-heading">
+                                                <span>张尧钦</span>
+                                                <span style="color: #646b88;margin-left: 20px;">2017年入学</span>
+                                            </h4>
+                                        </div>
+                                        <div style="padding-bottom: 15px;">
+                                            <h4 class="media-heading">
+                                                <span>孟廉</span>
+                                                <span style="color: #646b88;margin-left: 20px;">2015年入学</span>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media" style="min-height: 80px;margin-bottom: 25px;">
+                                    <div class="media-left" style="padding-right: 30px;">
+                                        <div style="width: 100px;text-align: center;">
+                                            <a href="#">
+                                                <img class="media-object" src="./img/current_group.png" width="50" style="margin: 0 auto;">
+                                            </a>
+                                            <p style="color: #646b88;">曾在本组的同学</p>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <div style="padding-bottom: 15px;">
+                                            <h4 class="media-heading">
+                                                <span>张三</span>
+                                                <span style="color: #646b88;margin-left: 20px;">已经毕业的学生张三</span>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 发表文章 -->
+                        <div class="tab-pane fade section-3" id="section-3">
+                            <div class="modal-header">
+                                <h4 class="modal-title">发表文章</h4>
+                            </div>
+                            <div class="modal-body" style="padding-top: 30px;">
+                                <div class="media" style="min-height: 80px;margin-bottom: 25px;">
+                                    <div class="media-left" style="padding-right: 30px;">
+                                        <div style="width: 100px;text-align: center;position: relative;">
+                                            <img class="media-object" src="./img/calendar.png" width="50" style="margin: 0 auto;">
+                                            <span style="position: absolute;right: 0;bottom: 8px;width: 100px;color: #2c3e81;">2016</span>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <div style="padding-bottom: 25px;margin-bottom: 25px;border-bottom: 1px solid #e4e6ef;">
+                                            <div style="position: relative;padding-right:150px">
+                                                <div style="color: #646b88;line-height: 25px !important;">
+                                                    Jun Feng, Minlie Huang, Li Zhao, Yang Yang, Xiaoyan Zhu:
+                                                </div>
+                                                <a href="">
+                                                    <div style="position: absolute;right: 0;top: 0;width: 100px;background-color: #eeeeee;color: #646b88;text-align: center;padding: 3px 0;">
+                                                        <i class="fa fa-download" style="color: #007eff;"></i>
+                                                        论文下载
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div style="padding-bottom: 25px;margin-bottom: 25px;border-bottom: 1px solid #e4e6ef;">
+                                            <div style="position: relative;padding-right:150px">
+                                                <div style="color: #646b88;line-height: 25px !important;">
+                                                    <span style="color: #2c3e81">Reinforcement Learning for Relation Classification from Noisy Data. </span>
+                                                    <span>AAAI 2018, New Orleans, Louisiana, USA </span>
+                                                </div>
+                                                <a href="">
+                                                    <div style="position: absolute;right: 0;top: 0;width: 100px;background-color: #eeeeee;color: #646b88;text-align: center;padding: 3px 0;">
+                                                        <i class="fa fa-download" style="color: #007eff;"></i>
+                                                        代码下载
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media" style="min-height: 80px;margin-bottom: 25px;">
+                                    <div class="media-left" style="padding-right: 30px;">
+                                        <div style="width: 100px;text-align: center;position: relative;">
+                                            <img class="media-object" src="./img/calendar.png" width="50" style="margin: 0 auto;">
+                                            <span style="position: absolute;right: 0;bottom: 8px;width: 100px;color: #2c3e81;">2016</span>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <div style="padding-bottom: 25px;margin-bottom: 25px;border-bottom: 1px solid #e4e6ef;">
+                                            <div style="position: relative;padding-right:150px">
+                                                <div style="color: #646b88;line-height: 25px !important;">
+                                                    Jun Feng, Minlie Huang, Li Zhao, Yang Yang, Xiaoyan Zhu:
+                                                </div>
+                                                <a href="">
+                                                    <div style="position: absolute;right: 0;top: 0;width: 100px;background-color: #eeeeee;color: #646b88;text-align: center;padding: 3px 0;">
+                                                        <i class="fa fa-download" style="color: #007eff;"></i>
+                                                        论文下载
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div style="padding-bottom: 25px;margin-bottom: 25px;border-bottom: 1px solid #e4e6ef;">
+                                            <div style="position: relative;padding-right:150px">
+                                                <div style="color: #646b88;line-height: 25px !important;">
+                                                    <span style="color: #2c3e81">Reinforcement Learning for Relation Classification from Noisy Data. </span>
+                                                    <span>AAAI 2018, New Orleans, Louisiana, USA </span>
+                                                </div>
+                                                <a href="">
+                                                    <div style="position: absolute;right: 0;top: 0;width: 100px;background-color: #eeeeee;color: #646b88;text-align: center;padding: 3px 0;">
+                                                        <i class="fa fa-link" style="color: #007eff;"></i>
+                                                        代码下载
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media" style="min-height: 80px;margin-bottom: 25px;">
+                                    <div class="media-left" style="padding-right: 30px;">
+                                        <div style="width: 100px;text-align: center;position: relative;">
+                                            <img class="media-object" src="./img/calendar.png" width="50" style="margin: 0 auto;">
+                                            <span style="position: absolute;right: 0;bottom: 8px;width: 100px;color: #2c3e81;">2016</span>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <div style="padding-bottom: 25px;margin-bottom: 25px;border-bottom: 1px solid #e4e6ef;">
+                                            <div style="position: relative;padding-right:150px">
+                                                <div style="color: #646b88;line-height: 25px !important;">
+                                                    Jun Feng, Minlie Huang, Li Zhao, Yang Yang, Xiaoyan Zhu:
+                                                </div>
+                                                <a href="">
+                                                    <div style="position: absolute;right: 0;top: 0;width: 100px;background-color: #eeeeee;color: #646b88;text-align: center;padding: 3px 0;">
+                                                        <i class="fa fa-download" style="color: #007eff;"></i>
+                                                        论文下载
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 开源代码 -->
+                        <div class="tab-pane fade section-4" id="section-4">
+                            <div class="modal-header">
+                                <h4 class="modal-title">开源代码</h4>
+                            </div>
+                            <div class="modal-body" style="padding-top: 30px;">
+                                <div class="media" style="min-height: 80px;margin-bottom: 25px;">
+                                    <div class="media-left" style="padding-right: 30px;">
+                                        <div style="width: 100px;text-align: center;position: relative;">
+                                            <img class="media-object" src="./img/calendar.png" width="50" style="margin: 0 auto;">
+                                            <span style="position: absolute;right: 0;bottom: 8px;width: 100px;color: #2c3e81;">2016</span>
+                                        </div>
+                                    </div>
+                                    <div class="media-body" style="padding-bottom: 15px;margin-bottom: 25px;border-bottom: 1px solid #e4e6ef;">
+                                        <div style="position: relative;padding: 5px 150px 5px 0;">
+                                            <div style="color: #646b88;line-height: 25px !important;">
+                                                <span style="color: #007eff;margin-right: 10px;">标题</span>
+                                                Jun Feng, Minlie Huang, Li Zhao, Yang Yang, Xiaoyan Zhu:
+                                            </div>
+                                            <a href="">
+                                                <div style="position: absolute;right: 0;top: 5px;width: 110px;background-color: #eeeeee;color: #646b88;padding: 3px;">
+                                                    <i class="fa fa-download" style="color: #007eff;margin-left: 5px"></i>
+                                                    论文下载
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div style="position: relative;padding: 5px 150px 5px 0;">
+                                            <div style="color: #646b88;line-height: 25px !important;">
+                                                <span style="color: #007eff;margin-right: 10px;">作者</span>
+                                                <span>AAAI 2018, New Orleans, Louisiana, USA </span>
+                                            </div>
+                                            <a href="">
+                                                <div style="position: absolute;right: 0;top: 5px;width: 110px;background-color: #eeeeee;color: #646b88;padding: 3px;">
+                                                    <i class="fa fa-download" style="color: #007eff;margin-left: 5px"></i>
+                                                    GitHub链接
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div style="position: relative;padding: 5px 150px 5px 0;">
+                                            <div style="color: #646b88;line-height: 25px !important;">
+                                                <span style="color: #007eff;margin-right: 10px;">简介</span>
+                                                <span>AAAI 2018, New Orleans, Louisiana, USA </span>
+                                            </div>
+                                            <a href="">
+                                                <div style="position: absolute;right: 0;top: 5px;width: 110px;background-color: #eeeeee;color: #646b88;padding: 3px;">
+                                                    <i class="fa fa-download" style="color: #007eff;margin-left: 5px"></i>
+                                                    代码下载
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 最近新闻 -->
+                        <div class="tab-pane fade section-5" id="section-5">
+                            <div class="modal-header">
+                                <h4 class="modal-title">最近新闻</h4>
+                            </div>
+                            <div style="overflow: hidden;">
+                                <div style="float: left;width: 188px;margin: 20px;">
+                                    <div class="thumbnail" style="border: none;padding: 5px;">
+                                    <img src="./img/centent.png" width="188" >
+                                    <div class="caption" style="width: 188px;margin: 0 auto;padding: 9px 0;">
+                                        <h3 style="margin: 15px 0;height: 53px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;">标题标题标题标题标题标题标题标题标题标题标题</h3>
+                                        <p style="color: #646b88;height:60px;line-height: 20px !important;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注</p>
+                                        <p style="color: #b6b9c5;">2018年3月24 14：00</p>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div style="float: left;width: 188px;margin: 20px;">
+                                    <div class="thumbnail" style="border: none;padding: 5px;">
+                                    <img src="./img/centent.png" width="188" >
+                                    <div class="caption" style="width: 188px;margin: 0 auto;padding: 9px 0;">
+                                        <h3 style="margin: 15px 0;height: 53px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;">标题</h3>
+                                        <p style="color: #646b88;height:60px;line-height: 20px !important;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">备注</p>
+                                        <p style="color: #b6b9c5;">2018年3月24 14：00</p>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <a class='join' href="#">加载更多</a>
+                            </div>
+                        </div>
+                        <!-- 人才招聘 -->
+                        <div class="tab-pane fade section-6" id="section-6">
+                            <div class="modal-header">
+                                <h4 class="modal-title">人才招聘</h4>
+                            </div>
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="margin-top: 20px">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <p>
+                                            <span style="font-size: 18px;">
+                                                实习生招聘
+                                            </span>
+                                            <span style="font-size: 12px;color: #a9adbb;margin-left:20px;">2018年7月1日 14：00 更新</span>
+                                        </p>
+                                        <p style="color: #646b88">备注</p>
+
+                                        <a style="color: #007eff;position: absolute;right: 20px;top: 50%;margin-top: -9px;" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            招聘详情
+                                            <i class="fa fa-sort-desc" style="color: #007eff;"></i>
+                                        </a>
+                                    </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        详细信息
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <p>
+                                            <span style="font-size: 18px;">
+                                                实习生招聘
+                                            </span>
+                                            <span style="font-size: 12px;color: #a9adbb;margin-left:20px;">2018年7月1日 14：00 更新</span>
+                                        </p>
+                                        <p style="color: #646b88">备注</p>
+
+                                        <a style="color: #007eff;position: absolute;right: 20px;top: 50%;margin-top: -9px;" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            招聘详情
+                                            <i class="fa fa-sort-desc" style="color: #007eff;"></i>
+                                        </a>
+                                    </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        详细信息
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+
+
+    <script>
+        if (window.location.href.indexOf('index.html') > -1) {
+            $('#myTabContent>div').removeClass('in active');
+            $('#section-2').addClass('in active')
+            $('#myScrollspy>ul>li').removeClass('active');
+            $('#nav-2').addClass('active')
+        }
+
+        setInterval(function () {
+            var unBackgroundimg = $('#section-1').hasClass('active');
+            if (unBackgroundimg) {
+                $('body').css('background-image', 'url(./img/bg.png)');
+            } else {
+                $('body').css('background-image', 'none');
+            }
+
+        },100);
+    </script>
+
 </body>
 </html>
